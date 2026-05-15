@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getCoordinates, getWeather } from "../services/api";
 import { getWeatherCondition } from "../utils/weatherCodes";
 import { getWeatherAssets } from "../utils/weatherAssets";
+import { formatHourlyForecast } from "../utils/formatData";
 
 export function useWeather(city) {
   const [data, setData] = useState(null);
@@ -17,16 +18,28 @@ export function useWeather(city) {
         setError(null);
 
         const location = await getCoordinates(city);
-        const weather = await getWeather(location.lat, location.lon);
-        const condition = getWeatherCondition(weather.weathercode);
+        const weather = await getWeather(location.lat, location.lon); // recibe data completo de la api
+        
+        const currentWeather = weather.current_weather;
+
+        const condition = getWeatherCondition(currentWeather.weathercode);
         const assets = getWeatherAssets(condition);
+
+        const hourlyForecast = formatHourlyForecast(
+          weather.hourly
+        );
+
+        //temporal
+        console.log(weather);
+        console.log(hourlyForecast);
 
         setData({
           city: location.name,
           country: location.country,
-          temperature: weather.temperature,
-          weatherCode: weather.weathercode,
+          temperature: currentWeather.temperature,
+          weatherCode: currentWeather.weathercode,
           condition,
+          hourlyForecast,
           ...assets,
         });
       } catch (err) {

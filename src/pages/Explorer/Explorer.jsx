@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useWeather } from "../../hooks/useWeather";
 import Background from "../../components/BackgroundManager/BackgroundManager";
+import HourlyForecast from "../../components/HourlyForecast/HourlyForecast";
 
 function Explorer() {
   const [inputValue, setInputValue] = useState("");
@@ -52,6 +53,14 @@ function Explorer() {
           <p>Condition: {data.condition}</p>
           <p>Mood: {data.mood}</p>
           <p>Video: {data.video}</p>
+
+          <hr />
+
+          <h2>Hourly Forecast</h2>
+
+          {data.hourlyForecast.map((hour) => (
+            <HourlyForecast hour={hour} />
+          ))}
         </div>
       )}
     </div>

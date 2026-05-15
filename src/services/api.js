@@ -28,7 +28,7 @@ export async function getCoordinates(city) {
 // 2. Obtener clima actual usando lat/lon
 export async function getWeather(lat, lon) {
   const response = await fetch(
-    `${WEATHER_BASE_URL}?latitude=${lat}&longitude=${lon}&current_weather=true`
+    `${WEATHER_BASE_URL}?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=temperature_2m,weather_code,precipitation_probability&timezone=auto`,
   );
 
   if (!response.ok) {
@@ -37,5 +37,5 @@ export async function getWeather(lat, lon) {
 
   const data = await response.json();
 
-  return data.current_weather;
+  return data;
 }
