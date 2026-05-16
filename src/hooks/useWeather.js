@@ -33,6 +33,7 @@ export function useWeather(city) {
         console.log("full data: ", weather);
         console.log("hourly: ", hourlyForecast);
         console.log("daily: ", dailyForecast);
+        console.log("sunTimes: ", sunTimes);
 
         setData({
           city: location.name,
@@ -42,6 +43,7 @@ export function useWeather(city) {
           condition,
           hourlyForecast,
           dailyForecast,
+          sunTimes,
           ...assets,
         });
       } catch (err) {

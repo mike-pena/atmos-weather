@@ -3,6 +3,7 @@ import { useWeather } from "../../hooks/useWeather";
 import Background from "../../components/BackgroundManager/BackgroundManager";
 import HourlyForecast from "../../components/HourlyForecast/HourlyForecast";
 import DailyForecast from "../../components/DailyForecast/DailyForecast";
+import SunTimes from "../../components/SunTimes/SunTimes";
 
 function Explorer() {
   const [inputValue, setInputValue] = useState("");
@@ -56,15 +57,14 @@ function Explorer() {
           <p>Video: {data.video}</p>
 
           <hr />
+          <SunTimes data={data.sunTimes} />
 
+          <hr />
           <h2>Hourly Forecast</h2>
-
           <HourlyForecast forecast={data.hourlyForecast} />
 
           <hr />
-
           <h2>Daily Forecast</h2>
-
           <DailyForecast forecast={data.dailyForecast} />
         </div>
       )}

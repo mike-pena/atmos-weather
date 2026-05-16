@@ -1,0 +1,13 @@
+.sun-times {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    overflow: visible;
+}
+
+.sun-times div {
+    background: rgba(255, 255, 255, 0.568);
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 120px;
+}
