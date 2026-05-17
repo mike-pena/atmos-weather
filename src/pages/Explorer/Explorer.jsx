@@ -50,6 +50,7 @@ function Explorer() {
           <p>
             City: {data.city}, {data.country}
           </p>
+          <p>Time: {data.currentTime}</p>
           <p>Temperature: {data.temperature}°C</p>
           <p>Weather Code: {data.weatherCode}</p>
           <p>Condition: {data.condition}</p>

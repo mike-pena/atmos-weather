@@ -42,19 +42,26 @@ export function formatDailyForecast(dailyData) {
   }));
 }
 
-export function formatSunTimes(daily) {
-  const sunrise = daily.sunrise[0];
-  const sunset = daily.sunset[0];
+export function formatSunTimes(daily, currentTime) {
+  const sunriseDate = new Date(daily.sunrise[0]);
+  const sunsetDate = new Date(daily.sunset[0]);
+  const currentDate = new Date(currentTime);
+
+  const isDay =
+    currentDate >= sunriseDate &&
+    currentDate < sunsetDate;
 
   return {
-    sunrise: new Date(sunrise).toLocaleTimeString([], {
+    sunrise: sunriseDate.toLocaleTimeString([], {
       hour: "numeric",
       minute: "2-digit",
     }),
 
-    sunset: new Date(sunset).toLocaleTimeString([], {
+    sunset: sunsetDate.toLocaleTimeString([], {
       hour: "numeric",
       minute: "2-digit",
     }),
+
+    isDay,
   };
 }
