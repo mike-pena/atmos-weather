@@ -1,12 +1,15 @@
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useWeather } from "../../hooks/useWeather";
 import Background from "../../components/BackgroundManager/BackgroundManager";
 import HourlyForecast from "../../components/HourlyForecast/HourlyForecast";
 import DailyForecast from "../../components/DailyForecast/DailyForecast";
 import SunTimes from "../../components/SunTimes/SunTimes";
 import WeatherDetailCard from "../../components/WeatherDetailCard/WeatherDetailCard";
+import Preloader from "../../components/Preloader/Preloader";
 
 function Explorer() {
+  
   const [inputValue, setInputValue] = useState("");
   const [searchCity, setSearchCity] = useState("");
 
@@ -42,7 +45,7 @@ function Explorer() {
       />
       <button onClick={handleSearch}>Search</button>
 
-      {loading && <p>Loading...</p>}
+      {loading && <Preloader />}
 
       {error && <p>Error: {error}</p>}
 

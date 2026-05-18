@@ -19,10 +19,14 @@ export function useWeather(city) {
   useEffect(() => {
     if (!city) return;
 
+    let startTime;
+
     async function fetchWeather() {
       try {
         setLoading(true);
         setError(null);
+
+        startTime = Date.now();
 
         const location = await getCoordinates(city);
         const weather = await getWeather(location.lat, location.lon); // recibe data completo de la api
@@ -66,6 +70,16 @@ export function useWeather(city) {
       } catch (err) {
         setError(err.message);
       } finally {
+        const elapsedTime = Date.now() - startTime;
+
+        const minimumLoadingTime = 900;
+
+        const remainingTime = minimumLoadingTime - elapsedTime;
+
+        if (remainingTime > 0) {
+          await new Promise((resolve) => setTimeout(resolve, remainingTime));
+        }
+
         setLoading(false);
       }
     }
