@@ -65,3 +65,45 @@ export function formatSunTimes(daily, currentTime) {
     isDay,
   };
 }
+
+export function getUVLevel(uvIndex) {
+  if (uvIndex <= 2) {
+    return "Low";
+  }
+
+  if (uvIndex <= 5) {
+    return "Moderate";
+  }
+
+  if (uvIndex <= 7) {
+    return "High";
+  }
+
+  if (uvIndex <= 10) {
+    return "Very High";
+  }
+
+  return "Extreme";
+}
+
+export function getUVMessage(level) {
+  switch (level) {
+    case "Low":
+      return "Minimal sun protection required.";
+
+    case "Moderate":
+      return "Consider sunscreen during midday hours.";
+
+    case "High":
+      return "Wear sunglasses and seek shade.";
+
+    case "Very High":
+      return "Avoid prolonged sun exposure.";
+
+    case "Extreme":
+      return "Avoid direct sun exposure.";
+
+    default:
+      return "";
+  }
+}

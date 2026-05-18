@@ -4,6 +4,7 @@ import Background from "../../components/BackgroundManager/BackgroundManager";
 import HourlyForecast from "../../components/HourlyForecast/HourlyForecast";
 import DailyForecast from "../../components/DailyForecast/DailyForecast";
 import SunTimes from "../../components/SunTimes/SunTimes";
+import WeatherDetailCard from "../../components/WeatherDetailCard/WeatherDetailCard";
 
 function Explorer() {
   const [inputValue, setInputValue] = useState("");
@@ -59,6 +60,19 @@ function Explorer() {
 
           <hr />
           <SunTimes data={data.sunTimes} />
+          
+          {/*
+          <div>
+            <p>UV Index: {data?.uvIndex?.value}</p>
+            <p>Level: {data?.uvIndex?.level}</p>
+          </div>
+          */}
+
+          <WeatherDetailCard
+            label="UV Index"
+            value={data?.uvIndex?.value}
+            description={`${data?.uvIndex?.level} • ${data?.uvIndex?.message}`}
+          />
 
           <hr />
           <h2>Hourly Forecast</h2>

@@ -6,7 +6,10 @@ import {
   formatHourlyForecast,
   formatDailyForecast,
   formatSunTimes,
+  getUVLevel,
+  getUVMessage,
 } from "../utils/formatData";
+import { getCurrentUVIndex } from "../utils/getCurrentUVIndex";
 
 export function useWeather(city) {
   const [data, setData] = useState(null);
@@ -32,6 +35,9 @@ export function useWeather(city) {
         const hourlyForecast = formatHourlyForecast(weather.hourly);
         const dailyForecast = formatDailyForecast(weather.daily);
         const sunTimes = formatSunTimes(weather.daily, currentTime);
+        const currentUVIndex = getCurrentUVIndex(weather.hourly, currentTime);
+        const uvLevel = getUVLevel(currentUVIndex);
+        const uvMessage = getUVMessage(uvLevel);
         const assets = getWeatherAssets(condition, sunTimes.isDay);
 
         //temporal
@@ -49,6 +55,11 @@ export function useWeather(city) {
           hourlyForecast,
           dailyForecast,
           sunTimes,
+          uvIndex: {
+            value: currentUVIndex,
+            level: uvLevel,
+            message: uvMessage,
+          },
           currentTime,
           ...assets,
         });
