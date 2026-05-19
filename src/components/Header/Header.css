@@ -1,0 +1,40 @@
+.header {
+    position: relative;
+    background-color: rgb(40, 20, 97);
+    width: 100%;
+}
+
+.header__container {
+    padding: 10px 30px;
+    max-width: 1126px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+
+.logo {
+    margin-right: auto;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.navigation-list {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-link.active {
+    text-decoration: none;
+    color: white;
+    text-shadow: 0 0 7px #fff;
+    font-weight: 600;
+}

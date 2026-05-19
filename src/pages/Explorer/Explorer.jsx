@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import { useWeather } from "../../hooks/useWeather";
 import Background from "../../components/BackgroundManager/BackgroundManager";
+import SearchBar from "../../components/SearchBar/SearchBar";
 import HourlyForecast from "../../components/HourlyForecast/HourlyForecast";
 import DailyForecast from "../../components/DailyForecast/DailyForecast";
 import SunTimes from "../../components/SunTimes/SunTimes";
@@ -10,40 +12,30 @@ import Preloader from "../../components/Preloader/Preloader";
 
 function Explorer() {
   
-  const [inputValue, setInputValue] = useState("");
-  const [searchCity, setSearchCity] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const searchCity = searchParams.get("city") || "";
 
   const { data, loading, error } = useWeather(searchCity);
 
   // Evitar busqueda vacia
-  function handleSearch() {
-    const trimmedCity = inputValue.trim();
+  function handleSearch(city) {
+    const trimmedCity = city.trim();
 
     if (!trimmedCity) return;
 
-    setSearchCity(trimmedCity);
-  }
-
-  // Busqueda con ENTER
-  function handleKeyDown(e) {
-    if (e.key === "Enter") {
-      handleSearch();
-    }
+    setSearchParams({
+      city: trimmedCity,
+    });
   }
 
   return (
     <div>
       <Background video={data?.video || "/videos/default.mp4"} />
-      <h1>Explorer</h1>
 
-      <input
-        type="text"
-        placeholder="Search city"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-        onKeyDown={handleKeyDown}
+      <SearchBar
+        variant="explorer"
+        onSearch={handleSearch}
       />
-      <button onClick={handleSearch}>Search</button>
 
       {loading && <Preloader />}
 
@@ -51,6 +43,7 @@ function Explorer() {
 
       {data && (
         <div>
+          <h1>{data.city}, {data.country}</h1>
           <p>
             City: {data.city}, {data.country}
           </p>
