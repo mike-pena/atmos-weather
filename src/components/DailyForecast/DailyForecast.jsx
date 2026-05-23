@@ -11,7 +11,17 @@ function DailyForecast({ forecast, isDay }) {
           <p>{day.day}</p>
           <p>{day.minTemp}°C</p>
           <p>{day.maxTemp}°C</p>
-          <p>{day.condition}</p>
+          <div className="precipitation-wrapper">
+            <div className="precipitation-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" className="rain-icon">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12.857 13L12 19m-2.5-7l-.857 6m7.857-6l-.857 6M8 7.036a3.484 3.484 0 011.975.99M6 13.662A3.5 3.5 0 018.37 7.11a5.002 5.002 0 019.614 1.49 2.751 2.751 0 011.59 4.122"/>
+              </svg>
+            </div>
+            <p className="precipitation-number">{day.precipitationProbability}%</p>
+          </div>
+          <div>
+            <img src={day.icon} className="daily-condition-icon" alt={day.condition} />
+          </div>
         </div>
       ))}
     </section>

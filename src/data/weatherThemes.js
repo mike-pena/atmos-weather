@@ -12,6 +12,7 @@ import stormDayIcon from "../assets/icons/storm-day.svg"
 import stormNightIcon from "../assets/icons/storm-day.svg"
 import drizzleDayIcon from "../assets/icons/drizzle-day.svg"
 import drizzleNightIcon from "../assets/icons/drizzle-day.svg"
+import unknownIcon from "../assets/icons/unknown.svg"
 
 export const weatherThemes = {
   clear: {
@@ -118,13 +119,13 @@ export const weatherThemes = {
       video: "default.mp4",
       overlay: "overlay-default",
       mood: "neutral",
-      icon: clearDayIcon,
+      icon: unknownIcon,
     },
     night: {
       video: "default.mp4",
       overlay: "overlay-default",
       mood: "neutral",
-      icon: clearNightIcon,
+      icon: unknownIcon,
     },
   },
 };

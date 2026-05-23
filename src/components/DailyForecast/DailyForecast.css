@@ -20,11 +20,20 @@
 
 .daily-forecast-card {
     border-bottom: solid 1px rgba(255, 255, 255, 0.103);
-    padding: 20px 30px;
+    padding: 20px 0px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.daily-forecast-card > * {
+    flex: 1;
 }
 
 .daily-forecast-card:last-of-type {
     border-bottom: none;
+}
+
+.daily-condition-icon {
+    width: 30px;
 }

@@ -39,23 +39,25 @@ export function formatHourlyForecast(hourlyData, currentTime) {
 }
 
 export function formatDailyForecast(dailyData) {
-  return dailyData.time.slice(0, 7).map((date, index) => ({
-    date,
 
-    day: new Date(`${date}T00:00:00`).toLocaleDateString("en-US", {
-      weekday: "short",
-    }),
+  return dailyData.time.slice(0, 7).map((date, index) => {
+    
+    const condition = getWeatherCondition(dailyData.weather_code[index]);
+    const assets = getWeatherAssets(condition, true);
 
-    maxTemp: dailyData.temperature_2m_max[index],
-
-    minTemp: dailyData.temperature_2m_min[index],
-
-    weatherCode: dailyData.weather_code[index],
-
-    precipitationProbability: dailyData.precipitation_probability_max[index],
-
-    condition: getWeatherCondition(dailyData.weather_code[index]),
-  }));
+    return {
+      date,
+      day: new Date(`${date}T00:00:00`).toLocaleDateString("en-US", {
+        weekday: "short",
+      }),
+      maxTemp: dailyData.temperature_2m_max[index],
+      minTemp: dailyData.temperature_2m_min[index],
+      weatherCode: dailyData.weather_code[index],
+      precipitationProbability: dailyData.precipitation_probability_max[index],
+      condition,
+      icon: assets.icon
+    }
+  });
 }
 
 export function formatSunTimes(daily, currentTime) {
