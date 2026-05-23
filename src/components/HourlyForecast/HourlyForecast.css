@@ -1,13 +1,101 @@
+.hourly-forecast-wrapper {
+    background: rgba(255, 255, 255, 0.336);
+    color: #222222;
+    backdrop-filter: blur(12px);
+    padding: 1rem;
+    border-radius: 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.171);
+}
+
+.hourly-forecast-wrapper.night {
+    background: rgba(255, 255, 255, 0.048);
+    color: white;
+    backdrop-filter: blur(12px);
+    padding: 1rem;
+    border-radius: 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.411);
+}
+
 .hourly-forecast {
     display: flex;
-    gap: 20px;
+    gap: 12px;
     justify-content: space-between;
-    overflow: visible;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE */
+}
+
+.hourly-forecast::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-btn {
+  position: absolute;
+  z-index: 10;
+  color: rgba(255, 255, 255, 0.541);
+
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+
+  cursor: pointer;
+}
+
+.carousel-btn:hover {
+    color: white;
+    scale: 120%;
+    transition: all 200ms;
+}
+
+.carousel-btn.left {
+  left: -25px;
+}
+
+.carousel-btn.right {
+  right: -15px;
 }
 
 .hourly-forecast-card {
-    background: rgba(255, 255, 255, 0.568);
-    padding: 10px;
-    border-radius: 10px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
     min-width: 100px;
+}
+
+.hour-time {
+    font-size: 14px;
+}
+
+.hour-temperature {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 0;
+}
+
+.hourly-condition-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.hour-condition {
+    font-size: 14px;
+}
+
+.hour-precipitation-wrapper {
+    padding-top: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
 }

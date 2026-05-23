@@ -1,5 +1,9 @@
 @import url("../vendor/fonts.css");
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   margin: 0;
 }

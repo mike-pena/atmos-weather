@@ -1,10 +1,25 @@
 import { getWeatherCondition } from "./weatherCodes";
+import { getWeatherAssets } from "./weatherAssets";
 
-export function formatHourlyForecast(hourlyData) {
-  const times = hourlyData.time.slice(0, 24);
+export function formatHourlyForecast(hourlyData, currentTime) {
+
+  const currentHourIndex = hourlyData.time.findIndex((time) => {
+    return time >= currentTime;
+  });
+
+  const startIndex = currentHourIndex === -1 ? 0 : currentHourIndex;
+
+  const times = hourlyData.time.slice(startIndex, startIndex + 24);
 
   return times.map((time, index) => {
-    const weatherCode = hourlyData.weather_code[index];
+    const originalIndex = startIndex + index;
+    const weatherCode = hourlyData.weather_code[originalIndex];
+
+    const condition = getWeatherCondition(weatherCode)
+    const hourNumber = Number(time.slice(11, 13));
+    const isDay = hourNumber >= 6 && hourNumber < 18;
+
+    const assets = getWeatherAssets(condition, isDay);
 
     const formattedTime = new Date(time).toLocaleTimeString([], {
       hour: "numeric",
@@ -14,10 +29,11 @@ export function formatHourlyForecast(hourlyData) {
     return {
       time: formattedTime,
       fullTime: time,
-      temperature: hourlyData.temperature_2m[index],
+      temperature: hourlyData.temperature_2m[originalIndex],
       weatherCode,
-      precipitationProbability: hourlyData.precipitation_probability[index],
-      condition: getWeatherCondition(weatherCode),
+      precipitationProbability: hourlyData.precipitation_probability[originalIndex],
+      condition,
+      icon: assets.icon,
     };
   });
 }

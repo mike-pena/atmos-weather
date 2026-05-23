@@ -38,3 +38,9 @@
     text-shadow: 0 0 7px #fff;
     font-weight: 600;
 }
+
+.controls button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}

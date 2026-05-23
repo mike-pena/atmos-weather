@@ -1,0 +1,33 @@
+.weather-detail-card {
+  padding: 1rem;
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(12px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.weather-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.weather-detail-label {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.weather-detail-value {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.weather-detail-description {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}

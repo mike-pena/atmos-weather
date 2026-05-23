@@ -37,7 +37,7 @@ export async function getWeather(lat, lon) {
 
   const data = await response.json();
 
-  console.log(data.hourly.uv_index)
+  console.log("full fetch", data)
 
   return data;
 }

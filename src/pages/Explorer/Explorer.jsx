@@ -8,7 +8,11 @@ import HourlyForecast from "../../components/HourlyForecast/HourlyForecast";
 import DailyForecast from "../../components/DailyForecast/DailyForecast";
 import SunTimes from "../../components/SunTimes/SunTimes";
 import WeatherDetailCard from "../../components/WeatherDetailCard/WeatherDetailCard";
+import UVIndex from "../../components/UVIndex/UvIndex";
 import Preloader from "../../components/Preloader/Preloader";
+import ForecastMain from "../../components/ForecastMain/ForecastMain";
+
+import "./Explorer.css";
 
 function Explorer() {
   
@@ -32,30 +36,44 @@ function Explorer() {
     <div>
       <Background video={data?.video || "/videos/default.mp4"} />
 
-      <SearchBar
-        variant="explorer"
-        onSearch={handleSearch}
-      />
-
       {loading && <Preloader />}
 
       {error && <p>Error: {error}</p>}
 
       {data && (
-        <div>
-          <h1>{data.city}, {data.country}</h1>
-          <p>
-            City: {data.city}, {data.country}
-          </p>
-          <p>Time: {data.currentTime}</p>
-          <p>Temperature: {data.temperature}°C</p>
-          <p>Weather Code: {data.weatherCode}</p>
-          <p>Condition: {data.condition}</p>
-          <p>Mood: {data.mood}</p>
-          <p>Video: {data.video}</p>
+        <div className="explorer-container">
+          <div className="explorer-top">
+            <ForecastMain data={data}/>
+            <div>
+              <SearchBar
+              variant="explorer"
+              onSearch={handleSearch}
+              />
+            </div>
+          </div>
 
-          <hr />
-          <SunTimes data={data.sunTimes} />
+          <HourlyForecast forecast={data.hourlyForecast} isDay={data.sunTimes.isDay} />
+
+          {/*
+            <p>Mood: {data.mood}</p>
+          <p>Video: {data.video}</p>
+          <p>Weather Code: {data.weatherCode}</p>
+          */}
+
+          <div className="explorer-bottom-section">
+            <DailyForecast forecast={data.dailyForecast} isDay={data.sunTimes.isDay} />
+
+            <div className="extra-metrics">
+              <SunTimes data={data.sunTimes} />
+
+              <WeatherDetailCard
+                label="UV Index"
+                value={data?.uvIndex?.value}
+                description={`${data?.uvIndex?.level} • ${data?.uvIndex?.message}`}
+              />
+            </div>
+          </div>
+          
           
           {/*
           <div>
@@ -64,19 +82,8 @@ function Explorer() {
           </div>
           */}
 
-          <WeatherDetailCard
-            label="UV Index"
-            value={data?.uvIndex?.value}
-            description={`${data?.uvIndex?.level} • ${data?.uvIndex?.message}`}
-          />
+          
 
-          <hr />
-          <h2>Hourly Forecast</h2>
-          <HourlyForecast forecast={data.hourlyForecast} />
-
-          <hr />
-          <h2>Daily Forecast</h2>
-          <DailyForecast forecast={data.dailyForecast} />
         </div>
       )}
     </div>

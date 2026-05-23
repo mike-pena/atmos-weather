@@ -1,0 +1,41 @@
+.forecast-main {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: start;
+}
+
+.forecast-main h2 {
+    font-size: 38px;
+}
+
+.forecast-main-wrapper {
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.temperature-container {
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.condition-icon {
+    width: 150px;
+}
+
+.temperature-number {
+    font-size: 96px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.temperature-unit {
+    padding-top: 8px;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1;
+}

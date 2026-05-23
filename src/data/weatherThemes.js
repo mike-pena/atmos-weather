@@ -1,14 +1,31 @@
+import clearDayIcon from "../assets/icons/clear-day.svg"
+import clearNightIcon from "../assets/icons/clear-night.svg"
+import cloudyDayIcon from "../assets/icons/cloudy-day.svg"
+import cloudyNightIcon from "../assets/icons/cloudy-day.svg"
+import rainDayIcon from "../assets/icons/rain-day.svg"
+import rainNightIcon from "../assets/icons/rain-day.svg"
+import fogDayIcon from "../assets/icons/fog-day.svg"
+import fogNightIcon from "../assets/icons/fog-day.svg"
+import snowDayIcon from "../assets/icons/snow-day.svg"
+import snowNightIcon from "../assets/icons/snow-day.svg"
+import stormDayIcon from "../assets/icons/storm-day.svg"
+import stormNightIcon from "../assets/icons/storm-day.svg"
+import drizzleDayIcon from "../assets/icons/drizzle-day.svg"
+import drizzleNightIcon from "../assets/icons/drizzle-day.svg"
+
 export const weatherThemes = {
   clear: {
     day: {
       video: "clear.mp4",
       overlay: "overlay-clear",
       mood: "bright",
+      icon: clearDayIcon,
     },
     night: {
       video: "night-clear.mp4",
       overlay: "overlay-clear",
       mood: "bright",
+      icon: clearNightIcon,
     },
   },
   cloudy: {
@@ -16,11 +33,13 @@ export const weatherThemes = {
       video: "cloudy.mp4",
       overlay: "overlay-cloudy",
       mood: "soft",
+      icon: cloudyDayIcon,
     },
     night: {
       video: "cloudy.mp4",
       overlay: "overlay-cloudy",
       mood: "soft",
+      icon: cloudyNightIcon,
     },
   },
   rain: {
@@ -28,11 +47,13 @@ export const weatherThemes = {
       video: "rain.mp4",
       overlay: "overlay-rain",
       mood: "moody",
+      icon: rainDayIcon,
     },
     night: {
       video: "rain.mp4",
       overlay: "overlay-rain",
       mood: "moody",
+      icon: rainNightIcon,
     },
   },
   fog: {
@@ -40,11 +61,14 @@ export const weatherThemes = {
       video: "fog.mp4",
       overlay: "overlay-fog",
       mood: "moody",
+      icon: fogDayIcon,
     },
     night: {
       video: "fog.mp4",
       overlay: "overlay-fog",
       mood: "moody",
+      icon: fogNightIcon,
+      
     },
   },
   snow: {
@@ -52,11 +76,13 @@ export const weatherThemes = {
       video: "snow.mp4",
       overlay: "overlay-snow",
       mood: "moody",
+      icon: snowDayIcon,
     },
     night: {
       video: "snow.mp4",
       overlay: "overlay-snow",
       mood: "moody",
+      icon: snowNightIcon,
     },
   },
   storm: {
@@ -64,11 +90,13 @@ export const weatherThemes = {
       video: "storm.mp4",
       overlay: "overlay-storrm",
       mood: "moody",
+      icon: stormDayIcon,
     },
     night: {
       video: "storm.mp4",
       overlay: "overlay-storrm",
       mood: "moody",
+      icon: stormNightIcon,
     },
   },
   drizzle: {
@@ -76,23 +104,27 @@ export const weatherThemes = {
       video: "drizzle.mp4",
       overlay: "overlay-drizzle",
       mood: "moody",
+      icon: drizzleDayIcon,
     },
     night: {
       video: "drizzle.mp4",
       overlay: "overlay-drizzle",
       mood: "moody",
+      icon: drizzleNightIcon,
     },
   },
-  default: {
+  unknown: {
     day: {
       video: "default.mp4",
       overlay: "overlay-default",
       mood: "neutral",
+      icon: clearDayIcon,
     },
     night: {
       video: "default.mp4",
       overlay: "overlay-default",
       mood: "neutral",
+      icon: clearNightIcon,
     },
   },
 };

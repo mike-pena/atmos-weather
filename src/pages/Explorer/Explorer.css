@@ -1,0 +1,24 @@
+.explorer-container {
+    padding: 30px;
+    padding-bottom: 80px;
+    max-width: 1126px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.explorer-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+}
+
+.explorer-bottom-section {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.extra-metrics {
+    width: 50%;
+}

@@ -29,13 +29,16 @@
 }
 
 .search-bar.explorer {
-  width: min(500px, 100%);
+  width: 300px;
 
   padding: 0.6rem 0.6rem 0.6rem 1rem;
 
   background: rgba(255, 255, 255, 0.06);
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.308);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.171);
 }
 
 .search-bar input {
@@ -80,6 +83,23 @@
   background: rgba(255, 255, 255, 0.22);
 
   transform: translateY(-1px);
+}
+
+.search-button.explorer {
+  padding: 0;
+  padding-right: 6px;
+
+  background: none;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.search-button.explorer:hover {
+  background: none;
 }
 
 .search-bar:focus-within {

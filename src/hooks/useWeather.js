@@ -32,11 +32,11 @@ export function useWeather(city) {
         const weather = await getWeather(location.lat, location.lon); // recibe data completo de la api
 
         const currentWeather = weather.current_weather;
-        const currentTime = weather.current_weather.time;
+        const currentTime = currentWeather.time;
 
         const condition = getWeatherCondition(currentWeather.weathercode);
 
-        const hourlyForecast = formatHourlyForecast(weather.hourly);
+        const hourlyForecast = formatHourlyForecast(weather.hourly, currentTime);
         const dailyForecast = formatDailyForecast(weather.daily);
         const sunTimes = formatSunTimes(weather.daily, currentTime);
         const currentUVIndex = getCurrentUVIndex(weather.hourly, currentTime);
