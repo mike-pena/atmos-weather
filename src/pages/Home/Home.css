@@ -18,9 +18,9 @@
   margin-top: 90px;
   position: relative;
   z-index: 1;
-  max-width: 1126px;
+  max-width: 1280px;
   height: 100%;
-  padding: 0 30px;
+  padding-inline: clamp(30px, 7vw, 94px);
   
   display: flex;
   flex-direction: column;

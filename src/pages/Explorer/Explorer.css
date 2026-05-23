@@ -1,7 +1,8 @@
 .explorer-container {
     padding: 30px;
+    padding-inline: clamp(30px, 7vw, 94px);
     padding-bottom: 80px;
-    max-width: 1126px;
+    max-width: 1280px;
     margin: auto;
     display: flex;
     flex-direction: column;

@@ -5,8 +5,9 @@
 }
 
 .header__container {
-    padding: 10px 30px;
-    max-width: 1126px;
+    padding-block: 10px;
+    padding-inline: clamp(30px, 7vw, 94px);
+    max-width: 1280px;
     margin: auto;
     display: flex;
     align-items: center;
