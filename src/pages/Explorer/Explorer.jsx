@@ -8,9 +8,10 @@ import HourlyForecast from "../../components/HourlyForecast/HourlyForecast";
 import DailyForecast from "../../components/DailyForecast/DailyForecast";
 import SunTimes from "../../components/SunTimes/SunTimes";
 import WeatherDetailCard from "../../components/WeatherDetailCard/WeatherDetailCard";
-import UVIndex from "../../components/UVIndex/UvIndex";
+//import UVIndex from "../../components/UVIndex/UvIndex";
 import Preloader from "../../components/Preloader/Preloader";
 import ForecastMain from "../../components/ForecastMain/ForecastMain";
+import UVLevel from "../../components/UVLevel/UVLevel";
 
 import "./Explorer.css";
 
@@ -64,12 +65,21 @@ function Explorer() {
             <DailyForecast forecast={data.dailyForecast} isDay={data.sunTimes.isDay} />
 
             <div className="extra-metrics">
-              <SunTimes data={data.sunTimes} />
+              <SunTimes data={data.sunTimes} isDay={data.sunTimes.isDay} />
 
               <WeatherDetailCard
                 label="UV Index"
                 value={data?.uvIndex?.value}
-                description={`${data?.uvIndex?.level} • ${data?.uvIndex?.message}`}
+                description={`${data?.uvIndex?.message}`}
+                isDay={data.sunTimes.isDay}
+                extraContent={<UVLevel currentLevel={data?.uvIndex?.level}/>}
+              />
+
+              <WeatherDetailCard
+                label="Wind Speed"
+                value={data?.uvIndex?.value}
+                description={`${data?.uvIndex?.message}`}
+                isDay={data.sunTimes.isDay}
               />
             </div>
           </div>

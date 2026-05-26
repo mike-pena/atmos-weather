@@ -36,7 +36,10 @@ export function useWeather(city) {
 
         const condition = getWeatherCondition(currentWeather.weathercode);
 
-        const hourlyForecast = formatHourlyForecast(weather.hourly, currentTime);
+        const hourlyForecast = formatHourlyForecast(
+          weather.hourly,
+          currentTime,
+        );
         const dailyForecast = formatDailyForecast(weather.daily);
         const sunTimes = formatSunTimes(weather.daily, currentTime);
         const currentUVIndex = getCurrentUVIndex(weather.hourly, currentTime);
@@ -46,6 +49,7 @@ export function useWeather(city) {
 
         //temporal
         console.log("full data: ", weather);
+        console.log("condition", condition);
         console.log("hourly: ", hourlyForecast);
         console.log("daily: ", dailyForecast);
         console.log("sunTimes: ", sunTimes);

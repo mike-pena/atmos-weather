@@ -5,9 +5,14 @@ function WeatherDetailCard({
   value,
   description,
   icon,
+  isDay,
+  extraContent
 }) {
+
+  const theme = isDay ? "day" : "night";
+
   return (
-    <section className="weather-detail-card">
+    <section className={`weather-detail-card ${theme}`}>
       <div className="weather-detail-header">
         {icon && <span>{icon}</span>}
 
@@ -16,10 +21,12 @@ function WeatherDetailCard({
         </p>
       </div>
 
-      <h3 className="weather-detail-value">
+      <p className="weather-detail-value">
         {value}
-      </h3>
+      </p>
 
+      {extraContent && (extraContent)}
+      
       {description && (
         <p className="weather-detail-description">
           {description}
