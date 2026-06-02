@@ -1,30 +1,51 @@
 import "./UVIndex.css";
 
-function UVIndex({
-  label,
-  value,
-  description,
-  icon,
+const levels = ["Low", "Moderate", "High", "Very High", "Extreme"];
+
+function UVIndex({ 
+  label, 
+  value, 
+  description, 
+  icon, 
+  isDay,
+  currentLevel
 }) {
+
+  const theme = isDay ? "day" : "night";
+
   return (
-    <section className="weather-detail-card">
-      <div className="weather-detail-header">
+    <section className={`uv-index-card ${theme}`}>
+      <div className="uv-index-header">
         {icon && <span>{icon}</span>}
 
-        <p className="weather-detail-label">
-          {label}
-        </p>
+        <p className="uv-index-label">{label}</p>
       </div>
 
-      <h3 className="weather-detail-value">
-        {value}
-      </h3>
+      <p className="uv-index-value">{value}</p>
 
-      {description && (
-        <p className="weather-detail-description">
-          {description}
-        </p>
-      )}
+      <div className="uv-levels">
+            <div className="uv-level-labels">
+                {levels.map((level) => (
+                    <div
+                    key={level}
+                    className={`uv-label ${
+                        currentLevel === level ? "selected" : ""
+                    }`}
+                    >
+                    {level}
+                    </div>
+                ))}
+            </div>
+            <div className="uv-level-colors">
+                <div style={{backgroundColor: "green"}}></div>
+                <div style={{backgroundColor: "yellow"}}></div>
+                <div style={{backgroundColor: "orange"}}></div>
+                <div style={{backgroundColor: "red"}}></div>
+                <div style={{backgroundColor: "purple"}}></div>
+            </div>
+        </div>
+        
+      {description && <p className="uv-index-description">{description}</p>}
     </section>
   );
 }

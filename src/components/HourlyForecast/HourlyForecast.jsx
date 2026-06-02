@@ -30,7 +30,7 @@ function HourlyForecast({ forecast, isDay }) {
         {forecast.map((hour) => (
           <div key={hour.fullTime} className="hourly-forecast-card">
             <p className="hour-time">{hour.time}</p>
-            <p className="hour-temperature">{hour.temperature} °C</p>
+            <p className="hour-temperature">{Math.round(hour.temperature)} °C</p>
             <img src={hour.icon} className="hourly-condition-icon" alt={hour.condition} />
             <p className="hour-condition">{hour.condition}</p>
             <div className="precipitation-wrapper">

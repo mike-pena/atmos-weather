@@ -6,12 +6,12 @@ import Background from "../../components/BackgroundManager/BackgroundManager";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import HourlyForecast from "../../components/HourlyForecast/HourlyForecast";
 import DailyForecast from "../../components/DailyForecast/DailyForecast";
-import SunTimes from "../../components/SunTimes/SunTimes";
-import WeatherDetailCard from "../../components/WeatherDetailCard/WeatherDetailCard";
-//import UVIndex from "../../components/UVIndex/UvIndex";
 import Preloader from "../../components/Preloader/Preloader";
 import ForecastMain from "../../components/ForecastMain/ForecastMain";
-import UVLevel from "../../components/UVLevel/UVLevel";
+import SunTimes from "../../components/SunTimes/SunTimes";
+import UVIndex from "../../components/UVIndex/UvIndex";
+import WeatherDetailCard from "../../components/WeatherDetailCard/WeatherDetailCard";
+import WindDirection from "../../components/WindDirection/WindDirection";
 
 import "./Explorer.css";
 
@@ -21,7 +21,7 @@ function Explorer() {
   const searchCity = searchParams.get("city") || "";
 
   const { data, loading, error } = useWeather(searchCity);
-
+  
   // Evitar busqueda vacia
   function handleSearch(city) {
     const trimmedCity = city.trim();
@@ -67,31 +67,36 @@ function Explorer() {
             <div className="extra-metrics">
               <SunTimes data={data.sunTimes} isDay={data.sunTimes.isDay} />
 
-              <WeatherDetailCard
+              <UVIndex
                 label="UV Index"
                 value={data?.uvIndex?.value}
                 description={`${data?.uvIndex?.message}`}
                 isDay={data.sunTimes.isDay}
-                extraContent={<UVLevel currentLevel={data?.uvIndex?.level}/>}
+                currentLevel={data?.uvIndex?.level}
               />
 
-              <WeatherDetailCard
-                label="Wind Speed"
-                value={data?.uvIndex?.value}
-                description={`${data?.uvIndex?.message}`}
-                isDay={data.sunTimes.isDay}
-              />
+              <div className="extra-metrics-sm">
+                <WeatherDetailCard
+                  label="Wind Speed"
+                  value={`${data?.wind?.speed} km/h`}
+                  isDay={data.sunTimes.isDay}
+                  extraContent={<WindDirection direction={data?.wind.direction} />}
+                />
+                <WeatherDetailCard
+                  label="Humidity"
+                  value={`${data?.humidity?.value}%`}
+                  description={data?.humidity?.level}
+                  isDay={data.sunTimes.isDay}
+                  extraContent={data.humidity.message}
+                />
+              </div>
+{/*
+              <p>Humidity: {data?.humidity?.value}%</p>
+              <p>{data.humidity.level}</p>
+              <p>{data.humidity.message}</p>
+*/}
             </div>
           </div>
-          
-          
-          {/*
-          <div>
-            <p>UV Index: {data?.uvIndex?.value}</p>
-            <p>Level: {data?.uvIndex?.level}</p>
-          </div>
-          */}
-
           
 
         </div>

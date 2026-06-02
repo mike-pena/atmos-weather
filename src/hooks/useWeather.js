@@ -5,11 +5,16 @@ import { getWeatherAssets } from "../utils/weatherAssets";
 import {
   formatHourlyForecast,
   formatDailyForecast,
+  formatLocalTime,
   formatSunTimes,
   getUVLevel,
   getUVMessage,
 } from "../utils/formatData";
 import { getCurrentUVIndex } from "../utils/getCurrentUVIndex";
+import { getWindDirectionLabel } from "../utils/getWindDirectionLabel";
+import { getCurrentHumidity } from "../utils/getCurrentHumidity";
+import { getHumidityLevel } from "../utils/getHumidityLevel";
+import { getHumidityMessage } from "../utils/getHumidityMessage";
 
 export function useWeather(city) {
   const [data, setData] = useState(null);
@@ -31,11 +36,13 @@ export function useWeather(city) {
         const location = await getCoordinates(city);
         const weather = await getWeather(location.lat, location.lon); // recibe data completo de la api
 
-        const currentWeather = weather.current_weather;
+        const currentWeather = weather.current;
+        console.log("currentWeather ", weather.current);
         const currentTime = currentWeather.time;
 
-        const condition = getWeatherCondition(currentWeather.weathercode);
-
+        const condition = getWeatherCondition(currentWeather.weather_code);
+         
+        const formattedTime = formatLocalTime(currentTime);
         const hourlyForecast = formatHourlyForecast(
           weather.hourly,
           currentTime,
@@ -46,19 +53,29 @@ export function useWeather(city) {
         const uvLevel = getUVLevel(currentUVIndex);
         const uvMessage = getUVMessage(uvLevel);
         const assets = getWeatherAssets(condition, sunTimes.isDay);
+        const windData = {
+          speed: currentWeather.wind_speed_10m,
+          direction: currentWeather.wind_direction_10m,
+          directionLabel: getWindDirectionLabel(currentWeather.wind_direction_10m),
+        };
+        const humidity = getCurrentHumidity(weather.hourly,currentTime);
+        const humidityLevel = getHumidityLevel(humidity);
+        const humidityData = {
+          value: humidity,
+          level: humidityLevel,
+          message: getHumidityMessage(humidityLevel),
+        };
 
         //temporal
-        console.log("full data: ", weather);
-        console.log("condition", condition);
-        console.log("hourly: ", hourlyForecast);
-        console.log("daily: ", dailyForecast);
+        console.log("current time: ", currentTime);
+        console.log("condition:", condition);
         console.log("sunTimes: ", sunTimes);
 
         setData({
           city: location.name,
           country: location.country,
-          temperature: currentWeather.temperature,
-          weatherCode: currentWeather.weathercode,
+          temperature: currentWeather.temperature_2m,
+          weatherCode: currentWeather.weather_code,
           condition,
           hourlyForecast,
           dailyForecast,
@@ -69,6 +86,12 @@ export function useWeather(city) {
             message: uvMessage,
           },
           currentTime,
+          formattedTime,
+          wind: windData,
+          feelsLike: {
+            value: currentWeather.apparent_temperature,
+          },
+          humidity: humidityData,
           ...assets,
         });
       } catch (err) {

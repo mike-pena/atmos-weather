@@ -1,33 +1,77 @@
-.weather-detail-card {
+.uv-index-card {
+  background: rgba(255, 255, 255, 0.336);
+  color: #222222;
+  backdrop-filter: blur(12px);
   padding: 1rem;
   border-radius: 24px;
-
-  background: rgba(255, 255, 255, 0.08);
-
-  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.171);
 
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.weather-detail-header {
+.uv-index-card.night {
+    background: rgba(255, 255, 255, 0.048);
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.411);
+}
+
+.uv-index-header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.weather-detail-label {
+.uv-index-label {
   font-size: 0.9rem;
   opacity: 0.7;
 }
 
-.weather-detail-value {
+.uv-index-value {
   font-size: 2rem;
   font-weight: 600;
 }
 
-.weather-detail-description {
+.uv-index-description {
   font-size: 0.95rem;
   opacity: 0.8;
+  margin-top: auto;
+}
+
+/*------------  UV LEVELS  -----------------*/
+.uv-level-labels {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.uv-label {
+  opacity: 0;
+}
+
+.uv-label.selected {
+  opacity: 1;
+  font-size: 15px;
+}
+
+.uv-level-colors {
+  width: 90%;
+  margin: auto;
+  height: 6px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.uv-level-colors > div:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.uv-level-colors > div:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }

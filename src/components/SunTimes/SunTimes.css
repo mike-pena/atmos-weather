@@ -1,13 +1,53 @@
-.sun-times {
+.sun-times-container {
+    background: rgba(255, 255, 255, 0.336);
+    color: #222222;
+    backdrop-filter: blur(12px);
+    padding: 1.5rem;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.171);
     display: flex;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
+    align-items: center;
     overflow: visible;
 }
 
-.sun-times div {
-    background: rgba(255, 255, 255, 0.568);
-    padding: 10px;
-    border-radius: 10px;
-    min-width: 120px;
+.sun-times-container.night {
+    background: rgba(255, 255, 255, 0.048);
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.411);
+}
+
+.sun-times-label > span {
+    font-size: 24px;
+    margin-top: 8px;
+    display: block;
+    width: 100px;
+    font-weight: 600;
+}
+
+.sun-track {
+  position: relative;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.685);
+  border-radius: 999px;
+  width: 100%;
+}
+
+.sun-icon {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sun-icon img {
+    width: 35px;
+}
+
+.moon-icon {
+    flex: 1;
+}
+
+.moon-icon img {
+    width: 100px
 }

@@ -69,6 +69,16 @@ export function formatSunTimes(daily, currentTime) {
     currentDate >= sunriseDate &&
     currentDate < sunsetDate;
 
+  const dayLength = sunsetDate.getTime() - sunriseDate.getTime();
+
+  const elapsed =
+    currentDate.getTime() - sunriseDate.getTime();
+
+  const progressPercent = Math.min(
+    Math.max((elapsed / dayLength) * 100, 0),
+    100
+  );
+
   return {
     sunrise: sunriseDate.toLocaleTimeString([], {
       hour: "numeric",
@@ -81,7 +91,16 @@ export function formatSunTimes(daily, currentTime) {
     }),
 
     isDay,
+    
+    progressPercent,
   };
+}
+
+export function formatLocalTime(currentTime) {
+   return new Date(currentTime).toLocaleTimeString([], {
+    hour: "numeric",
+    minute: "2-digit",
+  });
 }
 
 export function getUVLevel(uvIndex) {
