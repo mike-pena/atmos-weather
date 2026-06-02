@@ -35,3 +35,24 @@
     display: flex;
     gap: 18px;
 }
+
+.explorer-error-state-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.explorer-error-state {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.explorer-error-state-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: white;
+}

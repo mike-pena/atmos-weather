@@ -1,0 +1,18 @@
+.search-error {
+    display: flex;
+    gap: 5px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.search-error.night {
+    color: white;
+}
+
+.search-error-icon {
+  fill: #333;
+}
+
+.search-error-icon.night {
+  fill: white;
+}

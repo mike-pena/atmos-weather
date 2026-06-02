@@ -4,6 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import { useWeather } from "../../hooks/useWeather";
 import Background from "../../components/BackgroundManager/BackgroundManager";
 import SearchBar from "../../components/SearchBar/SearchBar";
+import SearchError from "../../components/SearchError/SearchError";
 import HourlyForecast from "../../components/HourlyForecast/HourlyForecast";
 import DailyForecast from "../../components/DailyForecast/DailyForecast";
 import Preloader from "../../components/Preloader/Preloader";
@@ -33,13 +34,31 @@ function Explorer() {
     });
   }
 
+  if (!data && error) {
+    return (
+      <div className="explorer-error-state-container">
+        <Background video="/error.mp4" />
+
+        <div className="explorer-error-state">
+          
+          <p className="explorer-error-state-title">No results for "{searchCity}"</p>
+          <SearchError message={error} errorState={true}/>
+          <SearchBar
+            variant="explorer-secondary"
+            onSearch={handleSearch}
+          />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div>
-      <Background video={data?.video || "/videos/default.mp4"} />
+      <Background video={data?.video || "/default.mp4"} />
 
       {loading && <Preloader />}
 
-      {error && <p>Error: {error}</p>}
+      {/*error && <p>Error: {error}</p>*/}
 
       {data && (
         <div className="explorer-container">
@@ -50,6 +69,7 @@ function Explorer() {
               variant="explorer"
               onSearch={handleSearch}
               />
+              <SearchError message={error} isDay={data.sunTimes.isDay}/>
             </div>
           </div>
 
@@ -101,6 +121,7 @@ function Explorer() {
 
         </div>
       )}
+
     </div>
   );
 }
