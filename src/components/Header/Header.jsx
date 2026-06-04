@@ -2,12 +2,14 @@ import { Link, NavLink } from "react-router-dom";
 
 import "./Header.css";
 
-function Header({ variant = "home" }) {
+function Header({ variant = "home", isDay }) {
+
+    const theme = isDay ? "day" : "night";
 
   return (
-    <header className={`header header-${variant}`}>
+    <header className={`header header-${variant} ${theme}`}>
         <div className="header__container">
-            <Link to="/" className="logo">
+            <Link to="/" className="logo" viewTransition>
                 <img src="src\assets\images\logo.png" alt="" />
             </Link>
             <nav>
@@ -17,6 +19,7 @@ function Header({ variant = "home" }) {
                         className={({ isActive }) =>
                             `nav-link ${isActive ? "active" : ""}`
                         }
+                        viewTransition
                         >
                         Home
                     </NavLink>
@@ -25,6 +28,7 @@ function Header({ variant = "home" }) {
                         className={({ isActive }) =>
                             `nav-link ${isActive ? "active" : ""}`
                         }
+                        viewTransition
                         >
                         About Us
                     </NavLink>

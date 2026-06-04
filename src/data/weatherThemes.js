@@ -23,7 +23,7 @@ export const weatherThemes = {
       icon: clearDayIcon,
     },
     night: {
-      video: "night-clear.mp4",
+      video: "clear-night.mp4",
       overlay: "overlay-clear",
       mood: "bright",
       icon: clearNightIcon,
@@ -37,7 +37,7 @@ export const weatherThemes = {
       icon: cloudyDayIcon,
     },
     night: {
-      video: "cloudy.mp4",
+      video: "cloudy-night.mp4",
       overlay: "overlay-cloudy",
       mood: "soft",
       icon: cloudyNightIcon,

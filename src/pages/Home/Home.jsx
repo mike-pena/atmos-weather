@@ -34,9 +34,9 @@ function Home() {
   }
 
   return (
+    <>
+    <Header variant="about"/>
     <main className="home">
-      <div className="home-overlay" />
-      
       <section className="hero">
         <div className="hero-text">
           <h1 className="hero-title">Beyond the forecast</h1>
@@ -55,6 +55,7 @@ function Home() {
 
       </section>
     </main>
+    </>
   );
 }
 

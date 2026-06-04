@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import { useWeather } from "../../hooks/useWeather";
+import Header from "../../components/Header/Header";
 import Background from "../../components/BackgroundManager/BackgroundManager";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import SearchError from "../../components/SearchError/SearchError";
@@ -51,10 +52,11 @@ function Explorer() {
       </div>
     );
   }
-
   return (
     <div>
+      <Header variant="explorer" isDay={data?.sunTimes.isDay}/>
       <Background video={data?.video || "/default.mp4"} />
+      {/*<Background video={"/storm.mp4"} />*/}
 
       {loading && <Preloader />}
 
