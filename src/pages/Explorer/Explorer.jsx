@@ -53,7 +53,7 @@ function Explorer() {
     );
   }
   return (
-    <div>
+    <>
       <Header variant="explorer" isDay={data?.sunTimes.isDay}/>
       <Background video={data?.video || "/default.mp4"} />
       {/*<Background video={"/storm.mp4"} />*/}
@@ -124,7 +124,7 @@ function Explorer() {
         </div>
       )}
 
-    </div>
+    </>
   );
 }
 

@@ -5,6 +5,7 @@ import Footer from "../../components/Footer/Footer";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import { getCoordinates } from "../../services/api";
 import SearchError from "../../components/SearchError/SearchError";
+import PageTransition from "../../components/PageTransition/PageTransition";
 
 import "./Home.css";
 
@@ -34,28 +35,27 @@ function Home() {
   }
 
   return (
-    <>
-    <Header variant="about"/>
     <main className="home">
-      <section className="hero">
-        <div className="hero-text">
-          <h1 className="hero-title">Beyond the forecast</h1>
+      <PageTransition>
+        <section className="hero">
+          <div className="hero-text">
+            <h1 className="hero-title">Beyond the forecast</h1>
 
-          <p className="hero-tagline">
-            Experience weather like a scene.
-          </p>
-        </div>
+            <p className="hero-tagline">
+              Experience weather like a scene.
+            </p>
+          </div>
 
-        <SearchBar
-          onSearch={handleSearch}
-          variant="main"
-        />
+          <SearchBar
+            onSearch={handleSearch}
+            variant="main"
+          />
 
-        <SearchError message={error} isDay={false}/>
+          <SearchError message={error} isDay={false}/>
 
-      </section>
+        </section>
+      </PageTransition>
     </main>
-    </>
   );
 }
 

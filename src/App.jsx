@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Lenis from "lenis";
+
 import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -7,6 +9,30 @@ import Explorer from "./pages/Explorer/Explorer";
 import AboutUs from "./pages/AboutUs/AboutUs";
 
 function App() {
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 0.9,
+      smoothWheel: true,
+      wheelMultiplier: 0.9,
+      touchMultiplier: 1.1,
+    });
+
+    let rafId;
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    rafId = requestAnimationFrame(raf);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <BrowserRouter>
       <Routes>
@@ -14,6 +40,7 @@ function App() {
           path="/"
           element={
             <>
+              <Header variant="about"/>
               <Home />
               <Footer />
             </>
