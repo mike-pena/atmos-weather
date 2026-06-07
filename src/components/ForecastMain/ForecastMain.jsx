@@ -1,3 +1,6 @@
+import Lottie from "lottie-react/build/index.es.js";
+//import sunAnimation from "../../assets/animations/drizzle-day.json"; FOR TESTING
+
 import "./ForecastMain.css";
 
 function ForecastMain({ data }) {
@@ -7,7 +10,11 @@ function ForecastMain({ data }) {
         <h2>{data.city}, {data.country}</h2>
         
         <div className="forecast-main-wrapper">
-            <img src={data.icon} className="condition-icon" alt={data.condition} />
+            <Lottie
+              className="condition-animation"
+              animationData={data.animation}
+              loop={true}
+            />
             <div>
               <div className="temperature-value-container">
                   <p className="temperature-number">{Math.round(data.temperature)}</p>

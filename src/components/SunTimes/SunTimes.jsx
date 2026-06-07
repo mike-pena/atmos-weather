@@ -1,3 +1,6 @@
+import Lottie from "lottie-react/build/index.es.js";
+import moonAnimation from "../../assets/animations/moon.json";
+import sunAnimation from "../../assets/animations/sun_2.json";
 import "./SunTimes.css";
 
 function SunTimes({ data, isDay }) {
@@ -22,7 +25,11 @@ function SunTimes({ data, isDay }) {
               left: `${data.progressPercent}%`,
             }}
           >
-            <img src="src\assets\icons\clear-day.svg" alt="" />
+            <Lottie
+              className="sun-animation"
+              animationData={sunAnimation}
+              loop={true}
+            />
           </div>
         </div>
       )}
@@ -38,11 +45,12 @@ function SunTimes({ data, isDay }) {
       {!isDay && (
         <div
             className="moon-icon"
-            style={{
-              left: `${data.progressPercent}%`,
-            }}
         >
-          <img src="src\assets\icons\clear-night.svg" alt="" />
+          <Lottie
+            className="moon-animation"
+            animationData={moonAnimation}
+            loop={true}
+          />
         </div>
       )}
 

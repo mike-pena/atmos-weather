@@ -20,12 +20,18 @@
 .temperature-value-container {
     display: flex;
     gap: 6px;
-    padding: 10px 0;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 
 .condition-icon {
     width: 150px;
 }
+
+.condition-animation {
+    width: 180px;
+}
+
 
 .temperature-number {
     font-size: 96px;
