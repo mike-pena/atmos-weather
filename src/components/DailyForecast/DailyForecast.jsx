@@ -9,8 +9,8 @@ function DailyForecast({ forecast, isDay }) {
       {forecast.map((day) => (
         <div key={day.date} className="daily-forecast-card">
           <p>{day.day}</p>
-          <p>{Math.round(day.minTemp)} °C</p>
-          <p>{Math.round(day.maxTemp)} °C</p>
+          <p><span className={`daily-min-temp_symbol ${theme}`}>↓</span> {Math.round(day.minTemp)} °C</p>
+          <p><span className={`daily-max-temp_symbol ${theme}`}>↑</span> {Math.round(day.maxTemp)} °C</p>
           <div className="precipitation-wrapper">
             <div className="precipitation-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" className="rain-icon">

@@ -37,7 +37,6 @@ export function useWeather(city) {
         const weather = await getWeather(location.lat, location.lon); // recibe data completo de la api
 
         const currentWeather = weather.current;
-        console.log("currentWeather ", weather.current);
         const currentTime = currentWeather.time;
 
         const condition = getWeatherCondition(currentWeather.weather_code);
@@ -65,11 +64,6 @@ export function useWeather(city) {
           level: humidityLevel,
           message: getHumidityMessage(humidityLevel),
         };
-
-        //temporal
-        console.log("current time: ", currentTime);
-        console.log("condition:", condition);
-        console.log("sunTimes: ", sunTimes);
 
         setData({
           city: location.name,

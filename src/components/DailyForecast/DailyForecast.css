@@ -34,6 +34,27 @@
     border-bottom: none;
 }
 
+.daily-min-temp_symbol {
+    color: #073fb9;
+    font-weight: 700;
+}
+
+.daily-min-temp_symbol.night {
+    color: #8BC5FF;
+    font-weight: 700;
+}
+
+.daily-max-temp_symbol {
+    color: #ff6600;
+    font-weight: 700;
+}
+
+.daily-max-temp_symbol.night {
+    color: #FFB74D;
+    font-weight: 700;
+}
+
+
 .daily-condition-icon {
     width: 30px;
 }
