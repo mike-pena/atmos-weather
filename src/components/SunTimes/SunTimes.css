@@ -1,56 +1,64 @@
-.sun-times-container {
-    background: rgba(255, 255, 255, 0.336);
-    color: #222222;
-    backdrop-filter: blur(12px);
-    padding: 1.5rem;
-    border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.171);
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    align-items: center;
-    overflow: visible;
+.sun-times {
+  background: rgba(255, 255, 255, 0.336);
+  color: #222222;
+  backdrop-filter: blur(12px);
+  padding: 1.5rem;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.171);
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
 }
 
-.sun-times-container.night {
-    background: rgba(255, 255, 255, 0.048);
-    color: white;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.411);
+.sun-times_theme_day {
+  color: #222222;
 }
 
-.sun-times-label > span {
-    font-size: 24px;
-    margin-top: 8px;
-    display: block;
-    width: 100px;
-    font-weight: 600;
+.sun-times_theme_night {
+  background: rgba(255, 255, 255, 0.048);
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.411);
 }
 
-.sun-track {
+.sun-times__label {
+  line-height: 1.4;
+}
+
+.sun-times__value {
+  display: block;
+  width: 100px;
+  margin-top: 8px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.sun-times__track {
   position: relative;
+  width: 100%;
   height: 4px;
   background: rgba(255, 255, 255, 0.685);
   border-radius: 999px;
-  width: 100%;
 }
 
-.sun-icon {
+.sun-times__sun-icon {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 
-.sun-animation {
-    width: 50px;
+.sun-times__sun-animation {
+  width: 50px;
 }
 
-.moon-icon {
-    display: flex;
-    align-items: center;
-    max-height: 140px;
-    overflow: hidden;
+.sun-times__moon-icon {
+  display: flex;
+  align-items: center;
+  max-height: 140px;
+  overflow: hidden;
 }
 
-.moon-animation {
-    width: 200px
+.sun-times__moon-animation {
+  width: 200px;
 }

@@ -1,4 +1,4 @@
-.hourly-forecast-wrapper {
+.hourly-forecast {
     background: rgba(255, 255, 255, 0.336);
     color: #222222;
     backdrop-filter: blur(12px);
@@ -10,7 +10,7 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.171);
 }
 
-.hourly-forecast-wrapper.night {
+.hourly-forecast.hourly-forecast_theme_night {
     background: rgba(255, 255, 255, 0.048);
     color: white;
     backdrop-filter: blur(12px);
@@ -22,7 +22,7 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.411);
 }
 
-.hourly-forecast {
+.hourly-forecast__carousel {
     display: flex;
     gap: 12px;
     justify-content: space-between;
@@ -33,11 +33,11 @@
     -ms-overflow-style: none; /* IE */
 }
 
-.hourly-forecast::-webkit-scrollbar {
+.hourly-forecast__carousel::-webkit-scrollbar {
   display: none;
 }
 
-.carousel-btn {
+.hourly-forecast__button {
   position: absolute;
   z-index: 10;
   color: rgba(255, 255, 255, 0.541);
@@ -50,21 +50,21 @@
   cursor: pointer;
 }
 
-.carousel-btn:hover {
+.hourly-forecast__button:hover {
     color: white;
     scale: 120%;
     transition: all 200ms;
 }
 
-.carousel-btn.left {
+.hourly-forecast__button_position_left {
   left: -25px;
 }
 
-.carousel-btn.right {
+.hourly-forecast__button_position_right {
   right: -15px;
 }
 
-.hourly-forecast-card {
+.hourly-forecast__card {
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -74,26 +74,26 @@
     min-width: 100px;
 }
 
-.hour-time {
+.hourly-forecast__time {
     font-size: 14px;
 }
 
-.hour-temperature {
+.hourly-forecast__temperature {
     font-size: 18px;
     font-weight: 600;
     padding: 10px 0;
 }
 
-.hourly-condition-icon {
+.hourly-forecast__condition-icon {
     width: 30px;
     height: 30px;
 }
 
-.hour-condition {
+.hourly-forecast__condition {
     font-size: 14px;
 }
 
-.precipitation-wrapper {
+.hourly-forecast__precipitation {
     padding-top: 8px;
     display: flex;
     justify-content: center;

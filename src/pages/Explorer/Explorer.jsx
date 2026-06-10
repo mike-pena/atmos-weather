@@ -37,12 +37,12 @@ function Explorer({ unit, onUnitChange }) {
 
   if (!data && error) {
     return (
-      <div className="explorer-error-state-container">
+      <div className="explorer__error-state-container">
         <Background video="/error.mp4" />
 
-        <div className="explorer-error-state">
+        <div className="explorer__error-state">
           
-          <p className="explorer-error-state-title">No results for "{searchCity}"</p>
+          <p className="explorer__error-state-title">No results for "{searchCity}"</p>
           <SearchError message={error} errorState={true}/>
           <SearchBar
             variant="explorer-secondary"
@@ -61,11 +61,9 @@ function Explorer({ unit, onUnitChange }) {
 
       {loading && <Preloader />}
 
-      {/*error && <p>Error: {error}</p>*/}
-
       {data && (
-        <div className="explorer-container">
-          <div className="explorer-top">
+        <div className="explorer__container">
+          <div className="explorer__top">
             <ForecastMain data={data}/>
             <div>
               <SearchBar
@@ -78,16 +76,10 @@ function Explorer({ unit, onUnitChange }) {
 
           <HourlyForecast forecast={data.hourlyForecast} isDay={data.sunTimes.isDay} temperatureUnit={data.units.temperature}/>
 
-          {/*
-            <p>Mood: {data.mood}</p>
-          <p>Video: {data.video}</p>
-          <p>Weather Code: {data.weatherCode}</p>
-          */}
-
-          <div className="explorer-bottom-section">
+          <div className="explorer__bottom">
             <DailyForecast forecast={data.dailyForecast} isDay={data.sunTimes.isDay} temperatureUnit={data.units.temperature}/>
 
-            <div className="extra-metrics">
+            <div className="explorer__metrics">
               <SunTimes data={data.sunTimes} isDay={data.sunTimes.isDay} />
 
               <UVIndex
@@ -98,7 +90,7 @@ function Explorer({ unit, onUnitChange }) {
                 currentLevel={data?.uvIndex?.level}
               />
 
-              <div className="extra-metrics-sm">
+              <div className="explorer__metrics-secondary">
                 <WeatherDetailCard
                   label="Wind Speed"
                   value={`${data?.wind?.speed} km/h`}
@@ -113,11 +105,7 @@ function Explorer({ unit, onUnitChange }) {
                   extraContent={data.humidity.message}
                 />
               </div>
-{/*
-              <p>Humidity: {data?.humidity?.value}%</p>
-              <p>{data.humidity.level}</p>
-              <p>{data.humidity.message}</p>
-*/}
+
             </div>
           </div>
           

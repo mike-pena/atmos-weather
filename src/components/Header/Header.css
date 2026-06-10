@@ -4,7 +4,7 @@
   width: 100%;
 }
 
-.header-about {
+.header_variant_about {
   position: fixed;
   z-index: 100;
   top: 0;
@@ -18,7 +18,7 @@
   backdrop-filter: blur(1px);
 }
 
-.header-explorer {
+.header_variant_explorer {
   position: fixed;
   z-index: 100;
   top: 0;
@@ -32,7 +32,7 @@
   backdrop-filter: blur(1px);
 }
 
-.header-explorer.night {
+.header_variant_explorer.header_theme_night {
   position: fixed;
   top: 0;
   height: 100px;
@@ -55,33 +55,33 @@
   gap: 100px;
 }
 
-.logo {
+.header__logo {
   margin-right: auto;
 }
 
-.logo img {
+.header__logo img {
   width: 150px;
 }
 
-.navigation-list {
+.header__navigation-list {
   display: flex;
   list-style: none;
   gap: 30px;
 }
 
-.nav-link {
+.header__navigation-link {
   text-decoration: none;
   color: white;
 }
 
-.nav-link.active {
+.header__navigation-link.header__navigation-link_active {
   text-decoration: none;
   color: white;
   text-shadow: 0 0 7px #fff;
   font-weight: 600;
 }
 
-.unit-toggle {
+.header__unit-toggle {
   position: relative;
   display: flex;
   align-items: center;
@@ -98,7 +98,7 @@
   font-family: "Figtree", sans-serif;
 }
 
-.unit-toggle__option {
+.header__unit-option {
   position: relative;
   z-index: 2;
   flex: 1;
@@ -107,12 +107,12 @@
   transition: color 0.25s ease;
 }
 
-.unit-toggle__option.active {
+.header__unit-option.header__unit-option_active {
   color: #111;
   font-weight: 700;
 }
 
-.unit-toggle__indicator {
+.header__unit-indicator {
   position: absolute;
   top: 4px;
   left: 4px;
@@ -123,6 +123,6 @@
   transition: transform 0.25s ease;
 }
 
-.unit-toggle__indicator--right {
+.header__unit-indicator_position_right {
   transform: translateX(100%);
 }

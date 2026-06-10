@@ -5,14 +5,18 @@
     margin-top: 10px;
 }
 
-.search-error.night {
-    color: white;
+.search-error_theme_day {
+  color: #333;
 }
 
-.search-error-icon {
-  fill: #333;
+.search-error_theme_night {
+  color: #fff;
 }
 
-.search-error-icon.night {
-  fill: white;
+.search-error__icon {
+  flex-shrink: 0;
+}
+
+.search-error__message {
+  margin: 0;
 }

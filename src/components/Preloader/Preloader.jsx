@@ -3,16 +3,12 @@ import "./Preloader.css";
 function Preloader() {
   return (
     <div className="preloader">
-      <div className="preloader-content">
-        <div className="preloader-glow"></div>
+      <div className="preloader__content">
+        <div className="preloader__glow"></div>
 
-        {/*<h1 className="preloader-title">
-          ATMOS
-        </h1>*/}
+        <img src="src\assets\images\logo.png" alt="" className="preloader__logo"/>
 
-        <img src="src\assets\images\logo.png" alt="" className="preloader-logo"/>
-
-        <p className="preloader-text">
+        <p className="preloader__text">
           Loading atmosphere...
         </p>
       </div>

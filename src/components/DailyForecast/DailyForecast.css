@@ -1,4 +1,4 @@
-.daily-forecast-container {
+.daily-forecast {
     background: rgba(255, 255, 255, 0.336);
     color: #222222;
     backdrop-filter: blur(12px);
@@ -12,13 +12,13 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.171);
 }
 
-.daily-forecast-container.night {
+.daily-forecast.daily-forecast_theme_night {
     background: rgba(255, 255, 255, 0.048);
     color: white;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.411);
 }
 
-.daily-forecast-card {
+.daily-forecast__card {
     border-bottom: solid 1px rgba(255, 255, 255, 0.103);
     padding: 20px 0px;
     display: flex;
@@ -26,35 +26,47 @@
     align-items: center;
 }
 
-.daily-forecast-card > * {
+.daily-forecast__card > * {
     flex: 1;
 }
 
-.daily-forecast-card:last-of-type {
+.daily-forecast__card:last-of-type {
     border-bottom: none;
 }
 
-.daily-min-temp_symbol {
+.daily-forecast__temperature-symbol_type_min {
     color: #073fb9;
     font-weight: 700;
 }
 
-.daily-min-temp_symbol.night {
+.daily-forecast__temperature-symbol_type_min.daily-forecast_theme_night {
     color: #8BC5FF;
     font-weight: 700;
 }
 
-.daily-max-temp_symbol {
+.daily-forecast__temperature-symbol_type_max {
     color: #ff6600;
     font-weight: 700;
 }
 
-.daily-max-temp_symbol.night {
+.daily-forecast__temperature-symbol_type_max.daily-forecast_theme_night {
     color: #FFB74D;
     font-weight: 700;
 }
 
+.daily-forecast__precipitation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
 
-.daily-condition-icon {
+.daily-forecast__precipitation-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.daily-forecast__condition-icon {
     width: 30px;
 }

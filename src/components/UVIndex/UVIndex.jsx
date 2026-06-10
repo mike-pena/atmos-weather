@@ -2,50 +2,58 @@ import "./UVIndex.css";
 
 const levels = ["Low", "Moderate", "High", "Very High", "Extreme"];
 
-function UVIndex({ 
-  label, 
-  value, 
-  description, 
-  icon, 
+function UVIndex({
+  label,
+  value,
+  description,
+  icon,
   isDay,
-  currentLevel
+  currentLevel,
 }) {
-
-  const theme = isDay ? "day" : "night";
+  const themeModifier = isDay
+    ? "uv-index_theme_day"
+    : "uv-index_theme_night";
 
   return (
-    <section className={`uv-index-card ${theme}`}>
-      <div className="uv-index-header">
+    <section className={`uv-index ${themeModifier}`}>
+      <div className="uv-index__header">
         {icon && <span>{icon}</span>}
 
-        <p className="uv-index-label">{label}</p>
+        <p className="uv-index__label">{label}</p>
       </div>
 
-      <p className="uv-index-value">{value}</p>
+      <p className="uv-index__value">{value}</p>
 
-      <div className="uv-levels">
-            <div className="uv-level-labels">
-                {levels.map((level) => (
-                    <div
-                    key={level}
-                    className={`uv-label ${
-                        currentLevel === level ? "selected" : ""
-                    }`}
-                    >
-                    {level}
-                    </div>
-                ))}
+      <div className="uv-index__levels">
+        <div className="uv-index__level-labels">
+          {levels.map((level) => (
+            <div
+              key={level}
+              className={`uv-index__level ${
+                currentLevel === level
+                  ? "uv-index__level_selected"
+                  : ""
+              }`}
+            >
+              {level}
             </div>
-            <div className="uv-level-colors">
-                <div style={{backgroundColor: "green"}}></div>
-                <div style={{backgroundColor: "yellow"}}></div>
-                <div style={{backgroundColor: "orange"}}></div>
-                <div style={{backgroundColor: "red"}}></div>
-                <div style={{backgroundColor: "purple"}}></div>
-            </div>
+          ))}
         </div>
-        
-      {description && <p className="uv-index-description">{description}</p>}
+
+        <div className="uv-index__level-colors">
+          <div style={{ backgroundColor: "green" }}></div>
+          <div style={{ backgroundColor: "yellow" }}></div>
+          <div style={{ backgroundColor: "orange" }}></div>
+          <div style={{ backgroundColor: "red" }}></div>
+          <div style={{ backgroundColor: "purple" }}></div>
+        </div>
+      </div>
+
+      {description && (
+        <p className="uv-index__description">
+          {description}
+        </p>
+      )}
     </section>
   );
 }

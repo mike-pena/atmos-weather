@@ -1,4 +1,4 @@
-.uv-index-card {
+.uv-index {
   background: rgba(255, 255, 255, 0.336);
   color: #222222;
   backdrop-filter: blur(12px);
@@ -11,36 +11,41 @@
   gap: 0.5rem;
 }
 
-.uv-index-card.night {
-    background: rgba(255, 255, 255, 0.048);
-    color: white;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.411);
+.uv-index_theme_day {
+  color: #222222;
 }
 
-.uv-index-header {
+.uv-index_theme_night {
+  background: rgba(255, 255, 255, 0.048);
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.411);
+}
+
+.uv-index__header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.uv-index-label {
+.uv-index__label {
   font-size: 0.9rem;
   opacity: 0.7;
 }
 
-.uv-index-value {
+.uv-index__value {
   font-size: 2rem;
   font-weight: 600;
 }
 
-.uv-index-description {
+.uv-index__description {
   font-size: 0.95rem;
   opacity: 0.8;
   margin-top: auto;
 }
 
-/*------------  UV LEVELS  -----------------*/
-.uv-level-labels {
+/* ------------ UV LEVELS ------------ */
+
+.uv-index__level-labels {
   width: 90%;
   margin: auto;
   display: grid;
@@ -49,16 +54,16 @@
   font-size: 12px;
 }
 
-.uv-label {
+.uv-index__level {
   opacity: 0;
 }
 
-.uv-label.selected {
+.uv-index__level.uv-index__level_selected {
   opacity: 1;
   font-size: 15px;
 }
 
-.uv-level-colors {
+.uv-index__level-colors {
   width: 90%;
   margin: auto;
   height: 6px;
@@ -66,12 +71,12 @@
   grid-template-columns: repeat(5, 1fr);
 }
 
-.uv-level-colors > div:first-child {
+.uv-index__level-colors > div:first-child {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
-.uv-level-colors > div:last-child {
+.uv-index__level-colors > div:last-child {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }

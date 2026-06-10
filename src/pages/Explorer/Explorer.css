@@ -1,4 +1,4 @@
-.explorer-container {
+.explorer__container {
     padding: 100px;
     padding-inline: clamp(30px, 7vw, 94px);
     padding-bottom: 80px;
@@ -8,42 +8,42 @@
     flex-direction: column;
 }
 
-.explorer-top {
+.explorer__top {
     display: flex;
     justify-content: space-between;
     padding: 40px 0;
 }
 
-.explorer-bottom-section {
+.explorer__bottom {
     margin-top: 2.5rem;
     display: flex;
     gap: 1.5rem;
 }
 
-.extra-metrics {
+.explorer__metrics {
     width: 50%;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.extra-metrics section {
+.explorer__metrics section {
     flex: 1;
 }
 
-.extra-metrics-sm {
+.explorer__metrics-secondary {
     display: flex;
     gap: 18px;
 }
 
-.explorer-error-state-container {
+.explorer__error-state-container {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.explorer-error-state {
+.explorer__error-state {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -51,7 +51,7 @@
     justify-content: center;
 }
 
-.explorer-error-state-title {
+.explorer__error-state-title {
     font-size: 28px;
     font-weight: 600;
     color: white;

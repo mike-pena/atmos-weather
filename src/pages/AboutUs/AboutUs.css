@@ -6,12 +6,12 @@
   background-color: black;
 }
 
-.about-wrapper {
+.about__wrapper {
   max-width: 1280px;
   padding-inline: clamp(30px, 7vw, 94px);
 }
 
-.about-hero {
+.about__hero {
   min-height: 100vh;
   padding-inline: clamp(30px, 7vw, 94px);
   display: flex;
@@ -28,7 +28,7 @@
     radial-gradient(at 73% 85%, hsla(274, 60%, 35%, 1) 0px, transparent 50%);
 }
 
-.about-hero::after {
+.about__hero::after {
   content: "";
   position: absolute;
   left: 0;
@@ -45,7 +45,7 @@
 }
 
 
-.about-hero__content {
+.about__hero-content {
   z-index: 10;
   max-width: 860px;
   display: flex;
@@ -54,7 +54,7 @@
   justify-content: center;
 }
 
-.about-eyebrow {
+.about__eyebrow {
   margin: 0 0 16px;
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -62,14 +62,14 @@
   opacity: 0.7;
 }
 
-.about-title {
+.about__title {
   margin: 0;
   font-size: clamp(3rem, 8vw, 6.5rem);
   line-height: 0.95;
   letter-spacing: -0.06em;
 }
 
-.about-description {
+.about__description {
   max-width: 620px;
   margin-top: 28px;
   font-size: clamp(1rem, 2vw, 1.25rem);
@@ -77,33 +77,33 @@
   opacity: 0.8;
 }
 
-.about-section {
+.about__section {
   max-width: 1100px;
   margin: 0 auto;
   padding: 90px 0;
 }
 
-.about-intro {
+.about__section_intro {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 40px;
   align-items: center;
 }
 
-.about-section h2 {
+.about__section h2 {
   margin: 0 0 20px;
   font-size: clamp(2rem, 4vw, 3.5rem);
   line-height: 1;
   letter-spacing: -0.04em;
 }
 
-.about-section p {
+.about__section p {
   line-height: 1.7;
   opacity: 0.78;
 }
 
-.about-card,
-.feature-card {
+.about__card,
+.about__feature-card {
   border: 1px solid rgba(255, 255, 255, 0.39);
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(18px);
@@ -111,41 +111,41 @@
   background-color: #ffffff28;
 }
 
-.about-card {
+.about__card {
   padding: 32px;
 }
 
-.features-grid {
+.about__features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
   margin-top: 32px;
 }
 
-.feature-card {
+.about__feature-card {
   padding: 28px;
 }
 
-.feature-card span {
+.about__feature-card span {
   font-size: 2rem;
 }
 
-.feature-card h3 {
+.about__feature-card h3 {
   margin: 20px 0 10px;
   font-size: 1.2rem;
 }
 
-.feature-card p {
+.about__feature-card p {
   margin: 0;
   font-size: 0.95rem;
 }
 
-.about-why {
+.about__section_why {
   max-width: 760px;
   text-align: center;
 }
 
-.about-closing {
+.about__closing {
   font-size: 1.25rem;
   font-weight: 600;
   opacity: 1;
@@ -154,12 +154,12 @@
 
 
 @media (max-width: 800px) {
-  .about-intro,
-  .features-grid {
+  .about__section_intro,
+  .about__features-grid {
     grid-template-columns: 1fr;
   }
 
-  .about-section {
+  .about__section {
     padding: 64px 0;
   }
 }

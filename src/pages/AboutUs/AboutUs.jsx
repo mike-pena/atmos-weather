@@ -17,22 +17,22 @@ function AboutUs() {
   return (
     <main className="about">
       <PageTransition>
-        <section className="about-hero">
-            <div className="about-hero__content">
-              <p className="about-eyebrow">About Atmos</p>
+        <section className="about__hero">
+            <div className="about__hero-content">
+              <p className="about__eyebrow">About Atmos</p>
 
-              <h1 className="about-title">Simple weather. Better experience.</h1>
+              <h1 className="about__title">Simple weather. Better experience.</h1>
 
-              <p className="about-description">
+              <p className="about__description">
                 Atmos is a modern weather app focused on clarity, real-time
                 conditions, and an immersive visual experience that adapts to the
                 weather around you.
               </p>
             </div>
         </section>
-        <div className="about-wrapper">
+        <div className="about__wrapper">
 
-          <section className="about-section about-intro">
+          <section className="about__section about__section_intro">
             <div>
               <h2>Built for a better forecast experience.</h2>
               <p>
@@ -42,7 +42,7 @@ function AboutUs() {
               </p>
             </div>
 
-            <div className="about-card">
+            <div className="about__card">
               <p>
                 Atmos combines accurate forecasts with a cinematic interface that
                 adapts to current conditions, time of day, and location.
@@ -50,41 +50,41 @@ function AboutUs() {
             </div>
           </section>
 
-          <section className="about-section">
+          <section className="about__section">
             <h2>What Atmos includes</h2>
 
-            <div className="features-grid">
-              <article className="feature-card">
+            <div className="about__features-grid">
+              <article className="about__feature-card">
                 <span>🌡️</span>
                 <h3>Current Weather</h3>
                 <p>Instant access to the current temperature and conditions.</p>
               </article>
 
-              <article className="feature-card">
+              <article className="about__feature-card">
                 <span>🕒</span>
                 <h3>Forecasts</h3>
                 <p>Hourly and daily forecasts presented in a clean layout.</p>
               </article>
 
-              <article className="feature-card">
+              <article className="about__feature-card">
                 <span>☀️</span>
                 <h3>UV Index</h3>
                 <p>Simple UV information to help you plan your day.</p>
               </article>
 
-              <article className="feature-card">
+              <article className="about__feature-card">
                 <span>🌅</span>
                 <h3>Sun Times</h3>
                 <p>Sunrise and sunset times based on the selected location.</p>
               </article>
 
-              <article className="feature-card">
+              <article className="about__feature-card">
                 <span>🌙</span>
                 <h3>Day / Night Mode</h3>
                 <p>Visuals that shift depending on local time.</p>
               </article>
 
-              <article className="feature-card">
+              <article className="about__feature-card">
                 <span>🎬</span>
                 <h3>Cinematic Themes</h3>
                 <p>Weather-based backgrounds, moods, and animations.</p>
@@ -92,8 +92,8 @@ function AboutUs() {
             </div>
           </section>
 
-          <section className="about-section about-why">
-            <p className="about-eyebrow">Why we built it</p>
+          <section className="about__section about__section_why">
+            <p className="about__eyebrow">Why we built it</p>
 
             <h2>Most weather apps feel outdated or overloaded.</h2>
 
@@ -103,7 +103,7 @@ function AboutUs() {
               sacrificing design.
             </p>
 
-            <p className="about-closing">
+            <p className="about__closing">
               The goal is simple: make checking the weather feel fast, intuitive,
               and enjoyable.
             </p>

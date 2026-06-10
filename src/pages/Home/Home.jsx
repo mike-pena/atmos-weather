@@ -1,7 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import { getCoordinates } from "../../services/api";
 import SearchError from "../../components/SearchError/SearchError";
@@ -37,11 +35,11 @@ function Home() {
   return (
     <main className="home">
       <PageTransition>
-        <section className="hero">
-          <div className="hero-text">
-            <h1 className="hero-title">Beyond the forecast</h1>
+        <section className="home__hero">
+          <div className="home__content">
+            <h1 className="home__title">Beyond the forecast</h1>
 
-            <p className="hero-tagline">
+            <p className="home__tagline">
               Experience weather like a scene.
             </p>
           </div>

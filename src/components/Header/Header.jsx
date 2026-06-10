@@ -3,64 +3,72 @@ import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
 
 function Header({ variant = "home", isDay, unit, onUnitChange }) {
+  
+  const themeModifier = isDay ? "header_theme_day" : "header_theme_night";
 
-    const theme = isDay ? "day" : "night";
+  const variantModifier = `header_variant_${variant}`;
 
   return (
-    <header className={`header header-${variant} ${theme}`}>
-        <div className="header__container">
-            <Link to="/" className="logo" viewTransition>
-                <img src="src\assets\images\logo.png" alt="" />
-            </Link>
-            <nav>
-                <ul className="navigation-list">
-                    <NavLink
-                        to="/"
-                        className={({ isActive }) =>
-                            `nav-link ${isActive ? "active" : ""}`
-                        }
-                        viewTransition
-                        >
-                        Home
-                    </NavLink>
-                    <NavLink
-                        to="/about-us"
-                        className={({ isActive }) =>
-                            `nav-link ${isActive ? "active" : ""}`
-                        }
-                        viewTransition
-                        >
-                        About Us
-                    </NavLink>
-                </ul>
-            </nav>
-            <div className="controls">
-                {/*<button type="button" onClick={onUnitChange} className="unitBtn">
-                    {unit === "celsius" ? "°F" : "°C"}
-                </button>*/}
+    <header className={`header ${variantModifier} ${themeModifier}`}>
+      <div className="header__container">
+        <Link to="/" className="header__logo" viewTransition>
+          <img src="src\assets\images\logo.png" alt="" />
+        </Link>
 
-                <button
-                    className="unit-toggle"
-                    type="button"
-                    onClick={onUnitChange}
-                    aria-label="Toggle temperature unit"
-                >
-                    <span className={`unit-toggle__option ${unit === "celsius" ? "active" : ""}`}>
-                        °C
-                    </span>
+        <nav className="header__navigation">
+          <ul className="header__navigation-list">
+            <li className="header__navigation-item">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `header__navigation-link ${isActive ? "header__navigation-link_active" : ""}`
+                }
+                viewTransition
+              >
+                Home
+              </NavLink>
+            </li>
+            <li className="header__navigation-item">
+              <NavLink
+                to="/about-us"
+                className={({ isActive }) =>
+                  `header__navigation-link ${isActive ? "header__navigation-link_active" : ""}`
+                }
+                viewTransition
+              >
+                About Us
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
 
-                    <span className={`unit-toggle__option ${unit === "fahrenheit" ? "active" : ""}`}>
-                        °F
-                    </span>
+        <div className="header__controls">
+          <button
+            className="header__unit-toggle"
+            type="button"
+            onClick={onUnitChange}
+            aria-label="Toggle temperature unit"
+          >
+            <span
+              className={`header__unit-option ${unit === "celsius" ? "header__unit-option_active" : ""}`}
+            >
+              °C
+            </span>
 
-                    <span
-                        className={`unit-toggle__indicator ${
-                        unit === "fahrenheit" ? "unit-toggle__indicator--right" : ""
-                        }`}
-                    />
-                </button>
-            </div>
+            <span
+              className={`header__unit-option ${unit === "fahrenheit" ? "header__unit-option_active" : ""}`}
+            >
+              °F
+            </span>
+
+            <span
+              className={`header__unit-indicator ${
+                unit === "fahrenheit" ? "header__unit-indicator_position_right" : ""
+              }`}
+            />
+          </button>
         </div>
+      </div>
     </header>
   );
 }

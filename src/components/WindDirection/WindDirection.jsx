@@ -4,7 +4,7 @@ function WindDirection({ direction }) {
     
     return (
         <div
-        className="wind-direction-arrow"
+        className="wind-direction__arrow"
         style={{transform: `rotate(${direction}deg)`}}
         >
             <svg viewBox="0 0 24.00 24.00" width="60" height="60" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#7c71d0" stroke-width="0.12000000000000002">

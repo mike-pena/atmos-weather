@@ -6,21 +6,21 @@ import "./ForecastMain.css";
 function ForecastMain({ data }) {
   return (
     <section className="forecast-main">
-        <p>Local Time: {data.formattedTime}</p>
-        <h2>{data.city}, {data.country}</h2>
+        <p className="forecast-main__local-time">Local Time: {data.formattedTime}</p>
+        <h2 className="forecast-main__location">{data.city}, {data.country}</h2>
         
-        <div className="forecast-main-wrapper">
+        <div className="forecast-main__content">
             <Lottie
-              className="condition-animation"
+              className="forecast-main__animation"
               animationData={data.animation}
               loop={true}
             />
-            <div>
-              <div className="temperature-value-container">
-                  <p className="temperature-number">{Math.round(data.temperature)}</p>
-                  <p className="temperature-unit">{data.units.temperature}</p>
+            <div className="forecast-main__temperature">
+              <div className="forecast-main__temperature-value">
+                  <p className="forecast-main__temperature-number">{Math.round(data.temperature)}</p>
+                  <p className="forecast-main__temperature-unit">{data.units.temperature}</p>
               </div>
-              <p className="apparent-temp">Feels like: {Math.round(data.feelsLike.value)} {data.units.temperature}</p>
+              <p className="forecast-main__feels-like">Feels like: {Math.round(data.feelsLike.value)} {data.units.temperature}</p>
             </div>
         </div>
 

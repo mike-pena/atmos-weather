@@ -16,7 +16,7 @@
     border-color 0.3s ease;
 }
 
-.search-bar.main {
+.search-bar.search-bar_variant_main {
   padding: 0.8rem 0.8rem 0.8rem 1.4rem;
   box-sizing: border-box;
 
@@ -28,7 +28,7 @@
     0 10px 40px rgba(0, 0, 0, 0.25);
 }
 
-.search-bar.explorer {
+.search-bar.search-bar_variant_explorer {
   width: 300px;
 
   padding: 0.6rem 0.6rem 0.6rem 1rem;
@@ -41,7 +41,7 @@
     0 10px 30px rgba(0, 0, 0, 0.171);
 }
 
-.search-bar.explorer-secondary {
+.search-bar.search-bar_variant_explorer-secondary {
   margin-top: 20px;
   max-width: 400px;
 
@@ -57,7 +57,7 @@
     0 10px 30px rgba(0, 0, 0, 0.171);
 }
 
-.search-bar input {
+.search-bar__input {
   flex: 1;
 
   background: transparent;
@@ -71,13 +71,13 @@
   letter-spacing: 1px;
 }
 
-.search-bar input::placeholder {
+.search-bar__input::placeholder {
   color: rgba(255, 255, 255, 0.55);
   font-weight: 400;
   letter-spacing: normal;
 }
 
-.search-bar button {
+.search-bar__button {
   border: none;
 
   border-radius: 999px;
@@ -95,13 +95,13 @@
     transform 0.3s ease;
 }
 
-.search-bar button:hover {
+.search-bar__button:hover {
   background: rgba(255, 255, 255, 0.22);
 
   transform: translateY(-1px);
 }
 
-.search-button.explorer, .search-button.explorer-secondary {
+.search-bar__button.search-bar__button_variant_explorer, .search-bar__button.search-bar__button_variant_explorer-secondary {
   padding: 0;
   padding-right: 6px;
 
@@ -114,7 +114,7 @@
     transform 0.3s ease;
 }
 
-.search-button.explorer:hover, .search-button.explorer-secondary:hover {
+.search-bar__button.search-bar__button_variant_explorer:hover, .search-bar__button.search-bar__button_variant_explorer-secondary:hover {
   background: none;
 }
 
