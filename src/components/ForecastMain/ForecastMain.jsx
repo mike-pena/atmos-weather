@@ -18,9 +18,9 @@ function ForecastMain({ data }) {
             <div>
               <div className="temperature-value-container">
                   <p className="temperature-number">{Math.round(data.temperature)}</p>
-                  <p className="temperature-unit">°C</p>
+                  <p className="temperature-unit">{data.units.temperature}</p>
               </div>
-              <p className="apparent-temp">Feels like: {Math.round(data.feelsLike.value)} °C</p>
+              <p className="apparent-temp">Feels like: {Math.round(data.feelsLike.value)} {data.units.temperature}</p>
             </div>
         </div>
 

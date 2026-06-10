@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Lenis from "lenis";
 
@@ -9,6 +9,24 @@ import Explorer from "./pages/Explorer/Explorer";
 import AboutUs from "./pages/AboutUs/AboutUs";
 
 function App() {
+
+  const TEMPERATURE_UNIT_STORAGE_KEY = "temperatureUnit";
+
+  const [temperatureUnit, setTemperatureUnit] = useState(() => {
+    return localStorage.getItem(TEMPERATURE_UNIT_STORAGE_KEY) || "celsius";
+  });
+
+  const toggleTemperatureUnit = () => {
+    setTemperatureUnit((currentUnit) =>
+      currentUnit === "celsius"
+        ? "fahrenheit"
+        : "celsius"
+    );
+  };
+
+  useEffect(() => {
+    localStorage.setItem(TEMPERATURE_UNIT_STORAGE_KEY, temperatureUnit);
+  }, [temperatureUnit]);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -40,7 +58,7 @@ function App() {
           path="/"
           element={
             <>
-              <Header variant="about"/>
+              <Header variant="about" unit={temperatureUnit} onUnitChange={toggleTemperatureUnit}/>
               <Home />
               <Footer />
             </>
@@ -50,7 +68,7 @@ function App() {
           path="/explorer"
           element={
             <>
-              <Explorer />
+              <Explorer unit={temperatureUnit} onUnitChange={toggleTemperatureUnit}/>
               <Footer />
             </>
           }
@@ -59,7 +77,7 @@ function App() {
           path="/about-us"
           element={
             <>
-              <Header variant="about"/>
+              <Header variant="about" unit={temperatureUnit} onUnitChange={toggleTemperatureUnit}/>
               <AboutUs />
               <Footer />
             </>

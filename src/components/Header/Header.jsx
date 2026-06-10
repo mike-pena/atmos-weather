@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 
 import "./Header.css";
 
-function Header({ variant = "home", isDay }) {
+function Header({ variant = "home", isDay, unit, onUnitChange }) {
 
     const theme = isDay ? "day" : "night";
 
@@ -35,14 +35,30 @@ function Header({ variant = "home", isDay }) {
                 </ul>
             </nav>
             <div className="controls">
-                <button aria-label="Mute">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="none">
-                        <path d="M6 1H8V15H6L2 11H0V5H2L6 1Z" fill="#fff"/>
-                        <path d="M14 8C14 5.79086 12.2091 4 10 4V2C13.3137 2 16 4.68629 16 8C16 11.3137 13.3137 14 10 14V12C12.2091 12 14 10.2091 14 8Z" fill="#fff"/>
-                        <path d="M12 8C12 9.10457 11.1046 10 10 10V6C11.1046 6 12 6.89543 12 8Z" fill="#fff"/>
-                    </svg>
+                {/*<button type="button" onClick={onUnitChange} className="unitBtn">
+                    {unit === "celsius" ? "°F" : "°C"}
+                </button>*/}
+
+                <button
+                    className="unit-toggle"
+                    type="button"
+                    onClick={onUnitChange}
+                    aria-label="Toggle temperature unit"
+                >
+                    <span className={`unit-toggle__option ${unit === "celsius" ? "active" : ""}`}>
+                        °C
+                    </span>
+
+                    <span className={`unit-toggle__option ${unit === "fahrenheit" ? "active" : ""}`}>
+                        °F
+                    </span>
+
+                    <span
+                        className={`unit-toggle__indicator ${
+                        unit === "fahrenheit" ? "unit-toggle__indicator--right" : ""
+                        }`}
+                    />
                 </button>
-                <button>Units</button>
             </div>
         </div>
     </header>

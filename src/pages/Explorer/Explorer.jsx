@@ -17,12 +17,12 @@ import WindDirection from "../../components/WindDirection/WindDirection";
 
 import "./Explorer.css";
 
-function Explorer() {
+function Explorer({ unit, onUnitChange }) {
   
   const [searchParams, setSearchParams] = useSearchParams();
   const searchCity = searchParams.get("city") || "";
 
-  const { data, loading, error } = useWeather(searchCity);
+  const { data, loading, error } = useWeather(searchCity, unit);
   
   // Evitar busqueda vacia
   function handleSearch(city) {
@@ -54,7 +54,8 @@ function Explorer() {
   }
   return (
     <>
-      <Header variant="explorer" isDay={data?.sunTimes.isDay}/>
+      <Header variant="explorer" isDay={data?.sunTimes.isDay} unit={unit} onUnitChange={onUnitChange}/>
+      
       <Background video={data?.video || "/default.mp4"} />
       {/*<Background video={"/storm.mp4"} />*/}
 
@@ -75,7 +76,7 @@ function Explorer() {
             </div>
           </div>
 
-          <HourlyForecast forecast={data.hourlyForecast} isDay={data.sunTimes.isDay} />
+          <HourlyForecast forecast={data.hourlyForecast} isDay={data.sunTimes.isDay} temperatureUnit={data.units.temperature}/>
 
           {/*
             <p>Mood: {data.mood}</p>
@@ -84,7 +85,7 @@ function Explorer() {
           */}
 
           <div className="explorer-bottom-section">
-            <DailyForecast forecast={data.dailyForecast} isDay={data.sunTimes.isDay} />
+            <DailyForecast forecast={data.dailyForecast} isDay={data.sunTimes.isDay} temperatureUnit={data.units.temperature}/>
 
             <div className="extra-metrics">
               <SunTimes data={data.sunTimes} isDay={data.sunTimes.isDay} />

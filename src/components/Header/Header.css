@@ -81,8 +81,48 @@
   font-weight: 600;
 }
 
-.controls button {
-  background: none;
-  border: none;
+.unit-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: 78px;
+  height: 38px;
+  padding: 4px;
+  border: 1px solid rgb(255 255 255 / 0.22);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.08);
+  backdrop-filter: blur(16px);
   cursor: pointer;
+  font-size: 16px;
+  font-family: "Figtree", sans-serif;
+}
+
+.unit-toggle__option {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  text-align: center;
+  color: rgb(255 255 255 / 0.55);
+  transition: color 0.25s ease;
+}
+
+.unit-toggle__option.active {
+  color: #111;
+  font-weight: 700;
+}
+
+.unit-toggle__indicator {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  height: calc(100% - 8px);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.9);
+  transition: transform 0.25s ease;
+}
+
+.unit-toggle__indicator--right {
+  transform: translateX(100%);
 }

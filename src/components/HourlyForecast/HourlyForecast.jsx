@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import "./HourlyForecast.css";
 
-function HourlyForecast({ forecast, isDay }) {
+function HourlyForecast({ forecast, isDay, temperatureUnit }) {
   const carouselRef = useRef(null);
 
   const scroll = (direction) => {
@@ -30,7 +30,7 @@ function HourlyForecast({ forecast, isDay }) {
         {forecast.map((hour) => (
           <div key={hour.fullTime} className="hourly-forecast-card">
             <p className="hour-time">{hour.time}</p>
-            <p className="hour-temperature">{Math.round(hour.temperature)} °C</p>
+            <p className="hour-temperature">{Math.round(hour.temperature)} {temperatureUnit}</p>
             <img src={hour.icon} className="hourly-condition-icon" alt={hour.condition} />
             <p className="hour-condition">{hour.condition}</p>
             <div className="precipitation-wrapper">

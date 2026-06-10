@@ -15,8 +15,9 @@ import { getWindDirectionLabel } from "../utils/getWindDirectionLabel";
 import { getCurrentHumidity } from "../utils/getCurrentHumidity";
 import { getHumidityLevel } from "../utils/getHumidityLevel";
 import { getHumidityMessage } from "../utils/getHumidityMessage";
+import { getTemperatureUnitSymbol } from "../utils/units";
 
-export function useWeather(city) {
+export function useWeather(city, unit) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -34,7 +35,7 @@ export function useWeather(city) {
         startTime = Date.now();
 
         const location = await getCoordinates(city);
-        const weather = await getWeather(location.lat, location.lon); // recibe data completo de la api
+        const weather = await getWeather(location.lat, location.lon, unit); // recibe data completo de la api
 
         const currentWeather = weather.current;
         const currentTime = currentWeather.time;
@@ -68,6 +69,9 @@ export function useWeather(city) {
         setData({
           city: location.name,
           country: location.country,
+          units: {
+            temperature: getTemperatureUnitSymbol(unit),
+          },
           temperature: currentWeather.temperature_2m,
           weatherCode: currentWeather.weather_code,
           condition,
@@ -106,7 +110,7 @@ export function useWeather(city) {
     }
 
     fetchWeather();
-  }, [city]);
+  }, [city, unit]);
 
   return { data, loading, error };
 }
