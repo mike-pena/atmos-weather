@@ -49,7 +49,7 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter basename="/cinematic-weather-frontend">
+    <BrowserRouter>
       <Routes>
         <Route
           path="/"
