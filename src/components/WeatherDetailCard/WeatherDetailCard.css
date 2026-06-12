@@ -56,3 +56,19 @@
   font-size: 0.95rem;
   opacity: 0.8;
 }
+
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 768px) {
+  .weather-detail-card__content {
+    flex-direction: column;
+    padding: 12px 0px;
+  }
+
+  .weather-detail-card__value {
+    font-size: 24px;
+    font-weight: 600;
+  }
+}

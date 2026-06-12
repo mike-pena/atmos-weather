@@ -1,9 +1,15 @@
-.explorer__container {
-    padding: 100px;
+.explorer {
+    width: 100%;
+    padding-top: 100px;
     padding-inline: clamp(30px, 7vw, 94px);
     padding-bottom: 80px;
+    box-sizing: border-box;
+}
+
+.explorer__container {
+    width: 100%;
     max-width: 1280px;
-    margin: auto;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
@@ -55,4 +61,46 @@
     font-size: 28px;
     font-weight: 600;
     color: white;
+}
+
+@media (max-width: 1024px) {
+    .explorer__top {
+        flex-direction: column-reverse;
+        gap: 40px;
+        justify-content: space-between;
+        padding: 40px 0;
+    }
+
+    .explorer__top > div{
+        margin-left: auto;
+    }
+
+    .explorer__bottom {
+        margin-top: 2.5rem;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .explorer__metrics {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .explorer {
+        padding-bottom: 50px;
+    }
+
+    .explorer__top > div{
+        margin: 0;
+    }
+
+    .explorer__bottom {
+        margin-top: 1.6rem;
+        gap: 1.6rem;
+    }
+
+    .explorer__metrics {
+        gap: 1.6rem;
+    }
 }

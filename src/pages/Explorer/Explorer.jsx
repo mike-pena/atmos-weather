@@ -62,54 +62,58 @@ function Explorer({ unit, onUnitChange }) {
       {loading && <Preloader />}
 
       {data && (
-        <div className="explorer__container">
-          <div className="explorer__top">
-            <ForecastMain data={data}/>
-            <div>
-              <SearchBar
-              variant="explorer"
-              onSearch={handleSearch}
-              />
-              <SearchError message={error} isDay={data.sunTimes.isDay}/>
-            </div>
-          </div>
+        <div className="explorer">
+          <div className="explorer__container">
 
-          <HourlyForecast forecast={data.hourlyForecast} isDay={data.sunTimes.isDay} temperatureUnit={data.units.temperature}/>
+          
+            <div className="explorer__top">
+              <ForecastMain data={data}/>
 
-          <div className="explorer__bottom">
-            <DailyForecast forecast={data.dailyForecast} isDay={data.sunTimes.isDay} temperatureUnit={data.units.temperature}/>
-
-            <div className="explorer__metrics">
-              <SunTimes data={data.sunTimes} isDay={data.sunTimes.isDay} />
-
-              <UVIndex
-                label="UV Index"
-                value={data?.uvIndex?.value}
-                description={`${data?.uvIndex?.message}`}
-                isDay={data.sunTimes.isDay}
-                currentLevel={data?.uvIndex?.level}
-              />
-
-              <div className="explorer__metrics-secondary">
-                <WeatherDetailCard
-                  label="Wind Speed"
-                  value={`${data?.wind?.speed} km/h`}
-                  isDay={data.sunTimes.isDay}
-                  extraContent={<WindDirection direction={data?.wind.direction} />}
+              <div>
+                <SearchBar
+                variant="explorer"
+                onSearch={handleSearch}
                 />
-                <WeatherDetailCard
-                  label="Humidity"
-                  value={`${data?.humidity?.value}%`}
-                  description={data?.humidity?.level}
-                  isDay={data.sunTimes.isDay}
-                  extraContent={data.humidity.message}
-                />
+                <SearchError message={error} isDay={data.sunTimes.isDay}/>
               </div>
+            </div>
 
+            <HourlyForecast forecast={data.hourlyForecast} isDay={data.sunTimes.isDay} temperatureUnit={data.units.temperature}/>
+
+            <div className="explorer__bottom">
+              <DailyForecast forecast={data.dailyForecast} isDay={data.sunTimes.isDay} temperatureUnit={data.units.temperature}/>
+
+              <div className="explorer__metrics">
+                <SunTimes data={data.sunTimes} isDay={data.sunTimes.isDay} />
+
+                <UVIndex
+                  label="UV Index"
+                  value={data?.uvIndex?.value}
+                  description={`${data?.uvIndex?.message}`}
+                  isDay={data.sunTimes.isDay}
+                  currentLevel={data?.uvIndex?.level}
+                />
+
+                <div className="explorer__metrics-secondary">
+                  <WeatherDetailCard
+                    label="Wind Speed"
+                    value={`${data?.wind?.speed} km/h`}
+                    isDay={data.sunTimes.isDay}
+                    extraContent={<WindDirection direction={data?.wind.direction} />}
+                  />
+                  <WeatherDetailCard
+                    label="Humidity"
+                    value={`${data?.humidity?.value}%`}
+                    description={data?.humidity?.level}
+                    isDay={data.sunTimes.isDay}
+                    extraContent={data.humidity.message}
+                  />
+                </div>
+
+              </div>
             </div>
           </div>
           
-
         </div>
       )}
 

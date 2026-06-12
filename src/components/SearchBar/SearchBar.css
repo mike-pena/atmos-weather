@@ -32,6 +32,7 @@
   width: 300px;
 
   padding: 0.6rem 0.6rem 0.6rem 1rem;
+  box-sizing: border-box;
 
   background: rgba(255, 255, 255, 0.06);
 
@@ -122,4 +123,14 @@
   border-color: rgba(255, 255, 255, 0.25);
 
   transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 768px) {
+  .search-bar.search-bar_variant_explorer {
+    width: 100%;
+  }
 }

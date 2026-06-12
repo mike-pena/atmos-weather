@@ -70,3 +70,35 @@
 .daily-forecast__condition-icon {
     width: 30px;
 }
+
+@media (max-width: 1024px) {
+    .daily-forecast {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .daily-forecast__card {
+        padding: 17px 0px;
+    }
+
+    .daily-forecast__precipitation {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 2px;
+        font-size: 14px;
+        margin-right: -15px;
+    }
+
+    .daily-forecast__rain-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .daily-forecast__condition-icon {
+        width: 24px;
+    }
+}

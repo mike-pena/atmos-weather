@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 import "./Header.css";
@@ -8,12 +9,30 @@ function Header({ variant = "home", isDay, unit, onUnitChange }) {
 
   const variantModifier = `header_variant_${variant}`;
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
   return (
     <header className={`header ${variantModifier} ${themeModifier}`}>
       <div className="header__container">
         <Link to="/" className="header__logo" viewTransition>
           <img src="src\assets\images\logo.png" alt="" />
         </Link>
+
+        <button
+          type="button"
+          className="header__menu-button"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          ☰
+        </button>
 
         <nav className="header__navigation">
           <ul className="header__navigation-list">
@@ -68,6 +87,86 @@ function Header({ variant = "home", isDay, unit, onUnitChange }) {
             />
           </button>
         </div>
+      </div>
+
+      <div className={`header__mobile-menu ${
+        isMenuOpen ? "header__mobile-menu_open" : ""
+        }`}>
+
+        <button
+            type="button"
+            className="header__mobile-close"
+            onClick={() => setIsMenuOpen(false)}
+        >
+            ✕
+        </button>
+
+        <div className="header__mobile-navigation">
+
+          <NavLink
+            to="/"
+            onClick={() => setIsMenuOpen(false)}
+            className="header__mobile-link"
+            viewTransition
+          >
+            Home
+          </NavLink>
+
+          <NavLink
+            to="/about-us"
+            onClick={() => setIsMenuOpen(false)}
+            className="header__mobile-link"
+            viewTransition
+          >
+            About Us
+          </NavLink>
+
+        </div>
+
+        <div className="header__mobile-controls">
+          <p className="header__mobile-controls-title">
+            Temperature
+          </p>
+
+          <button
+            className="header__unit-toggle"
+            type="button"
+            onClick={() => {
+              onUnitChange();
+              setIsMenuOpen(false);
+            }}
+            aria-label="Toggle temperature unit"
+          >
+            <span
+              className={`header__unit-option ${
+                unit === "celsius"
+                  ? "header__unit-option_active"
+                  : ""
+              }`}
+            >
+              °C
+            </span>
+
+            <span
+              className={`header__unit-option ${
+                unit === "fahrenheit"
+                  ? "header__unit-option_active"
+                  : ""
+              }`}
+            >
+              °F
+            </span>
+
+            <span
+              className={`header__unit-indicator ${
+                unit === "fahrenheit"
+                  ? "header__unit-indicator_position_right"
+                  : ""
+              }`}
+            />
+          </button>
+        </div>
+
       </div>
     </header>
   );
