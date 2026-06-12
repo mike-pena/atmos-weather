@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
+import logo from "../../assets/images/logo.png";
 
 import "./Header.css";
 
@@ -23,7 +24,7 @@ function Header({ variant = "home", isDay, unit, onUnitChange }) {
     <header className={`header ${variantModifier} ${themeModifier}`}>
       <div className="header__container">
         <Link to="/" className="header__logo" viewTransition>
-          <img src="src\assets\images\logo.png" alt="" />
+          <img src={logo} alt="" />
         </Link>
 
         <button

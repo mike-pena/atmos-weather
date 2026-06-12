@@ -4,7 +4,7 @@ function Background({ video }) {
 
     if (!video) return null;
     
-    const src = "/videos/" + video
+    const src = `${import.meta.env.BASE_URL}videos/${video}`;
 
     return (
         <div className="background">
