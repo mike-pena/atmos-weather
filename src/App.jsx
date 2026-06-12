@@ -9,7 +9,6 @@ import Explorer from "./pages/Explorer/Explorer";
 import AboutUs from "./pages/AboutUs/AboutUs";
 
 function App() {
-
   const TEMPERATURE_UNIT_STORAGE_KEY = "temperatureUnit";
 
   const [temperatureUnit, setTemperatureUnit] = useState(() => {
@@ -18,9 +17,7 @@ function App() {
 
   const toggleTemperatureUnit = () => {
     setTemperatureUnit((currentUnit) =>
-      currentUnit === "celsius"
-        ? "fahrenheit"
-        : "celsius"
+      currentUnit === "celsius" ? "fahrenheit" : "celsius",
     );
   };
 
@@ -52,13 +49,17 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/cinematic-weather-frontend">
       <Routes>
         <Route
           path="/"
           element={
             <>
-              <Header variant="about" unit={temperatureUnit} onUnitChange={toggleTemperatureUnit}/>
+              <Header
+                variant="about"
+                unit={temperatureUnit}
+                onUnitChange={toggleTemperatureUnit}
+              />
               <Home />
               <Footer />
             </>
@@ -68,7 +69,10 @@ function App() {
           path="/explorer"
           element={
             <>
-              <Explorer unit={temperatureUnit} onUnitChange={toggleTemperatureUnit}/>
+              <Explorer
+                unit={temperatureUnit}
+                onUnitChange={toggleTemperatureUnit}
+              />
               <Footer />
             </>
           }
@@ -77,7 +81,11 @@ function App() {
           path="/about-us"
           element={
             <>
-              <Header variant="about" unit={temperatureUnit} onUnitChange={toggleTemperatureUnit}/>
+              <Header
+                variant="about"
+                unit={temperatureUnit}
+                onUnitChange={toggleTemperatureUnit}
+              />
               <AboutUs />
               <Footer />
             </>
