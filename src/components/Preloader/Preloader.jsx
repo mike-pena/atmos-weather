@@ -1,3 +1,5 @@
+import logo from "../../assets/images/logo.png";
+
 import "./Preloader.css";
 
 function Preloader() {
@@ -6,7 +8,7 @@ function Preloader() {
       <div className="preloader__content">
         <div className="preloader__glow"></div>
 
-        <img src="src\assets\images\logo.png" alt="" className="preloader__logo"/>
+        <img src={logo} alt="" className="preloader__logo"/>
 
         <p className="preloader__text">
           Loading atmosphere...
