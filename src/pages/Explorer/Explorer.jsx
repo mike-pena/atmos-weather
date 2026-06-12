@@ -11,7 +11,7 @@ import DailyForecast from "../../components/DailyForecast/DailyForecast";
 import Preloader from "../../components/Preloader/Preloader";
 import ForecastMain from "../../components/ForecastMain/ForecastMain";
 import SunTimes from "../../components/SunTimes/SunTimes";
-import UVIndex from "../../components/UVIndex/UvIndex";
+import UVIndex from "../../components/UVIndex/UVIndex";
 import WeatherDetailCard from "../../components/WeatherDetailCard/WeatherDetailCard";
 import WindDirection from "../../components/WindDirection/WindDirection";
 
