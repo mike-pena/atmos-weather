@@ -12,15 +12,3 @@
   height: 100%;
   object-fit: cover;
 }
-
-@media (max-width: 768px) {
-  .background {
-    position: fixed;
-    top: -50px;
-    left: 0;
-    width: 100%;
-    height: calc(100% + 100px);
-    z-index: -1;
-    overflow: hidden;
-  }
-}
