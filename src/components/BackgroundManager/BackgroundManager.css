@@ -2,8 +2,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
+  bottom: 0;
   z-index: -1;
   overflow: hidden;
 }
@@ -16,8 +16,7 @@
 
 @media (max-width: 768px) {
   .background {
-    top: auto;
-    left: auto;
-    inset: -100px 0;
+    top: -100px;
+    bottom: -100px;
   }
 }
