@@ -6,13 +6,17 @@ html {
 
 body {
   margin: 0;
-  background-color: rgb(47, 0, 78);
+  background-color: lime;
 }
 
 #root {
-  width: 100%;
-  margin: 0;
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
   text-align: center;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   font-family: "Figtree", sans-serif;
 }
