@@ -2,9 +2,7 @@
   position: fixed;
   inset: 0;
   width: 100vw;
-  height: calc(100dvh + env(safe-area-inset-top) + env(safe-area-inset-bottom));
-  top: calc(-1 * env(safe-area-inset-top));
-  left: 0;
+  height: 100dvh;
   z-index: -1;
   overflow: hidden;
 }
