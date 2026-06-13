@@ -25,7 +25,7 @@ function App() {
     localStorage.setItem(TEMPERATURE_UNIT_STORAGE_KEY, temperatureUnit);
   }, [temperatureUnit]);
 
-  /*useEffect(() => {
+  useEffect(() => {
     const lenis = new Lenis({
       duration: 0.9,
       smoothWheel: true,
@@ -46,7 +46,7 @@ function App() {
       cancelAnimationFrame(rafId);
       lenis.destroy();
     };
-  }, []);*/
+  }, []);
 
   return (
     <BrowserRouter>
