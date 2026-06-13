@@ -56,14 +56,13 @@ function Explorer({ unit, onUnitChange }) {
     <>
       <Header variant="explorer" isDay={data?.sunTimes.isDay} unit={unit} onUnitChange={onUnitChange}/>
       
-  
+      <Background video={data?.video || "default.mp4"} />
       {/*<Background video={"/storm.mp4"} />*/}
 
       {loading && <Preloader />}
 
       {data && (
         <div className="explorer">
-          <Background video={data?.video || "default.mp4"} />
           <div className="explorer__container">
 
           
