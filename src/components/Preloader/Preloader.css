@@ -85,3 +85,11 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 768px) {
+
+  .preloader__logo {
+    width: 65%;
+  }
+
+}

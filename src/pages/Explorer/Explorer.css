@@ -89,6 +89,7 @@
 @media (max-width: 768px) {
     .explorer {
         padding-bottom: 50px;
+        padding-inline: 20px;
     }
 
     .explorer__top > div{

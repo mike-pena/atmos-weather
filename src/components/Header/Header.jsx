@@ -130,7 +130,7 @@ function Header({ variant = "home", isDay, unit, onUnitChange }) {
           </p>
 
           <button
-            className="header__unit-toggle"
+            className="header__unit-toggle header__unit-toggle_mobile"
             type="button"
             onClick={() => {
               onUnitChange();
