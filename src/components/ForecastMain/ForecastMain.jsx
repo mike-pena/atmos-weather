@@ -20,6 +20,7 @@ function ForecastMain({ data }) {
                   <p className="forecast-main__temperature-number">{Math.round(data.temperature)}</p>
                   <p className="forecast-main__temperature-unit">{data.units.temperature}</p>
               </div>
+              <p className="forecast-main__condition">{data.condition.charAt(0).toUpperCase() + data.condition.slice(1)}</p>
               <p className="forecast-main__feels-like">Feels like: {Math.round(data.feelsLike.value)}°</p>
             </div>
         </div>

@@ -19,6 +19,16 @@ body {
   flex-direction: column;
   box-sizing: border-box;
   font-family: "Figtree", sans-serif;
+
+  --glass-background: rgba(255, 255, 255, 0.336);
+  --glass-blur: blur(25px);
+  --text-dark: #222222;
+  --border-radius: 24px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.171);
+
+  --glass-background-night: rgba(27, 27, 27, 0.212);
+  --text-light: #fff;
+  --shadow-night: 0 10px 30px rgba(0, 0, 0, 0.432);
 }
 
 h1,

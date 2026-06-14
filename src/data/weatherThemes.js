@@ -33,7 +33,7 @@ import defaultNightAnimation from "../assets/animations/default-night.json"
 export const weatherThemes = {
   clear: {
     day: {
-      video: "clear.mp4",
+      video: "clear-day.mp4",
       overlay: "overlay-clear",
       mood: "bright",
       icon: clearDayIcon,
@@ -49,7 +49,7 @@ export const weatherThemes = {
   },
   cloudy: {
     day: {
-      video: "cloudy.mp4",
+      video: "cloudy-day.mp4",
       overlay: "overlay-cloudy",
       mood: "soft",
       icon: cloudyDayIcon,
@@ -65,14 +65,14 @@ export const weatherThemes = {
   },
   rain: {
     day: {
-      video: "rain.mp4",
+      video: "rain-day.mp4",
       overlay: "overlay-rain",
       mood: "moody",
       icon: rainDayIcon,
       animation: rainDayAnimation,
     },
     night: {
-      video: "rain.mp4",
+      video: "rain-night.mp4",
       overlay: "overlay-rain",
       mood: "moody",
       icon: rainNightIcon,
@@ -81,14 +81,14 @@ export const weatherThemes = {
   },
   fog: {
     day: {
-      video: "fog.mp4",
+      video: "fog-day.mp4",
       overlay: "overlay-fog",
       mood: "moody",
       icon: fogDayIcon,
       animation: fogDayAnimation,
     },
     night: {
-      video: "fog.mp4",
+      video: "fog-night.mp4",
       overlay: "overlay-fog",
       mood: "moody",
       icon: fogNightIcon,
@@ -97,14 +97,14 @@ export const weatherThemes = {
   },
   snow: {
     day: {
-      video: "snow.mp4",
+      video: "snow-day.mp4",
       overlay: "overlay-snow",
       mood: "moody",
       icon: snowDayIcon,
       animation: snowAnimation,
     },
     night: {
-      video: "snow.mp4",
+      video: "snow-night.mp4",
       overlay: "overlay-snow",
       mood: "moody",
       icon: snowNightIcon,
@@ -113,14 +113,14 @@ export const weatherThemes = {
   },
   storm: {
     day: {
-      video: "storm.mp4",
+      video: "storm-day.mp4",
       overlay: "overlay-storrm",
       mood: "moody",
       icon: stormDayIcon,
       animation: stormAnimation,
     },
     night: {
-      video: "storm.mp4",
+      video: "storm-night.mp4",
       overlay: "overlay-storrm",
       mood: "moody",
       icon: stormNightIcon,
@@ -129,14 +129,14 @@ export const weatherThemes = {
   },
   drizzle: {
     day: {
-      video: "drizzle.mp4",
+      video: "drizzle-day.mp4",
       overlay: "overlay-drizzle",
       mood: "moody",
       icon: drizzleDayIcon,
       animation: drizzleDayAnimation,
     },
     night: {
-      video: "drizzle.mp4",
+      video: "drizzle-night.mp4",
       overlay: "overlay-drizzle",
       mood: "moody",
       icon: drizzleNightIcon,
@@ -145,14 +145,14 @@ export const weatherThemes = {
   },
   unknown: {
     day: {
-      video: "default.mp4",
+      video: "clear-day.mp4",
       overlay: "overlay-default",
       mood: "neutral",
       icon: unknownIcon,
       animation: defaultDayAnimation,
     },
     night: {
-      video: "default.mp4",
+      video: "clear-night.mp4",
       overlay: "overlay-default",
       mood: "neutral",
       icon: unknownIcon,

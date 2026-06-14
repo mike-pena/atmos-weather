@@ -42,7 +42,5 @@ export async function getWeather(lat, lon, unit) {
 
   const data = await response.json();
 
-  console.log("full fetch", data);
-
   return data;
 }

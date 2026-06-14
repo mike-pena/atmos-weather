@@ -56,8 +56,8 @@ function Explorer({ unit, onUnitChange }) {
     <>
       <Header variant="explorer" isDay={data?.sunTimes.isDay} unit={unit} onUnitChange={onUnitChange}/>
       
-      <Background video={data?.video || "default.mp4"} />
-      {/*<Background video={"/storm.mp4"} />*/}
+      <Background video={data?.video || "default.mp4"} isDay={data?.sunTimes.isDay}/>
+      {/*<Background video={"/storm-night.mp4"} isDay={data?.sunTimes.isDay}/>*/}
 
       {loading && <Preloader />}
 

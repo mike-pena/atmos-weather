@@ -72,8 +72,14 @@
 }
 
 .header__navigation-link {
+  display: inline-block;
   text-decoration: none;
   color: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+.header__navigation-link:hover {
+  transform: scale(1.1); 
 }
 
 .header__navigation-link.header__navigation-link_active {
@@ -81,6 +87,11 @@
   color: white;
   text-shadow: 0 0 7px #fff;
   font-weight: 600;
+  cursor: default;
+}
+
+.header__navigation-link_active:hover {
+  transform: none; 
 }
 
 .header__unit-toggle {

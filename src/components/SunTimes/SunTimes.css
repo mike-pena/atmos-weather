@@ -1,10 +1,10 @@
 .sun-times {
-  background: rgba(255, 255, 255, 0.336);
-  color: #222222;
-  backdrop-filter: blur(12px);
+  background: var(--glass-background);
+  color: var(--text-dark);
+  backdrop-filter: var(--glass-blur);
   padding: 1.5rem;
-  border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.171);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
   display: flex;
   gap: 30px;
   justify-content: center;
@@ -12,14 +12,10 @@
   overflow: visible;
 }
 
-.sun-times_theme_day {
-  color: #222222;
-}
-
 .sun-times_theme_night {
-  background: rgba(255, 255, 255, 0.048);
-  color: white;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.411);
+  background: var(--glass-background-night);
+  color: var(--text-light);
+  box-shadow: var(--shadow-night);
 }
 
 .sun-times__label {
