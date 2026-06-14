@@ -81,6 +81,10 @@
 .hourly-forecast__condition-icon {
     width: 30px;
     height: 30px;
+    filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.254));
+}
+
+.hourly-forecast__condition-icon.hourly-forecast_theme_night {
     filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.178));
 }
 
@@ -111,7 +115,7 @@
 
     .hourly-forecast__card {
         flex: 0 0 85px;
-        gap: 5px;
+        gap: 8px;
         padding: 5px 0 0 0;
         min-width: 0;
     }
@@ -127,6 +131,7 @@
     }
 
     .hourly-forecast__precipitation {
+        margin-top: 4px;
         gap: 4px;
         font-size: 14px;
     }

@@ -20,7 +20,7 @@ body {
   box-sizing: border-box;
   font-family: "Figtree", sans-serif;
 
-  --glass-background: rgba(255, 255, 255, 0.336);
+  --glass-background: rgba(255, 255, 255, 0.557);
   --glass-blur: blur(25px);
   --text-dark: #222222;
   --border-radius: 24px;

@@ -18,23 +18,28 @@
   box-shadow: var(--shadow-night);
 }
 
+.sun-times__label-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 8px;
+}
+
 .sun-times__label {
   line-height: 1.4;
 }
 
 .sun-times__value {
-  display: block;
-  width: 100px;
-  margin-top: 8px;
   font-size: 24px;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .sun-times__track {
   position: relative;
   width: 100%;
   height: 4px;
-  background: rgba(255, 255, 255, 0.685);
+  background: rgb(255, 255, 255);
   border-radius: 999px;
 }
 
@@ -45,7 +50,7 @@
 }
 
 .sun-times__sun-animation {
-  width: 50px;
+  width: 45px;
 }
 
 .sun-times__moon-icon {
@@ -57,4 +62,51 @@
 
 .sun-times__moon-animation {
   width: 200px;
+}
+
+@media (max-width: 768px) {
+  .sun-times__sun-animation {
+    width: 35px;
+  }
+
+  .sun-times {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+  }
+
+  .sun-times_theme_day {
+    padding-bottom: 35px;
+  }
+
+  .sun-times__label-wrapper {
+    gap: 4px;
+  }
+
+  .sun-times__label-wrapper_type_sunrise {
+    justify-self: start;
+    padding-left: 20px;
+  }
+
+  .sun-times__label-wrapper_type_sunset {
+    justify-self: end;
+    padding-right: 20px;
+  }
+
+  .sun-times__value {
+    font-size: 18px;
+  }
+
+  .sun-times__track,
+  .sun-times__moon-icon {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .sun-times__track {
+    width: 92%;
+    margin: auto;
+  }
 }

@@ -34,7 +34,7 @@ function HourlyForecast({ forecast, isDay, temperatureUnit }) {
           <div key={hour.fullTime} className="hourly-forecast__card">
             <p className="hourly-forecast__time">{hour.time}</p>
             <p className="hourly-forecast__temperature">{Math.round(hour.temperature)}°</p>
-            <img src={hour.icon} className="hourly-forecast__condition-icon" alt={hour.condition} />
+            <img src={hour.icon} className={`hourly-forecast__condition-icon ${themeModifier}`} alt={hour.condition} />
             <p className="hourly-forecast__condition">{hour.condition.charAt(0).toUpperCase() + hour.condition.slice(1)}</p>
             <div className="hourly-forecast__precipitation">
               <div className="hourly-forecast__precipitation-icon">

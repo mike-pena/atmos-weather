@@ -11,12 +11,14 @@ function SunTimes({ data, isDay }) {
 
   return (
     <section className={`sun-times ${themeModifier}`}>
-      <div className="sun-times__label">
-        Sunrise:
-        <br />
-        <span className="sun-times__value">
-          {data.sunrise}
-        </span>
+
+      <div className="sun-times__label-wrapper sun-times__label-wrapper_type_sunrise">
+        <p className="sun-times__label">
+          Sunrise:
+        </p>
+        <p className="sun-times__value">
+            {data.sunrise}
+        </p>
       </div>
 
       {isDay && (
@@ -36,12 +38,13 @@ function SunTimes({ data, isDay }) {
         </div>
       )}
 
-      <div className="sun-times__label">
-        Sunset:
-        <br />
-        <span className="sun-times__value">
-          {data.sunset}
-        </span>
+      <div className="sun-times__label-wrapper sun-times__label-wrapper_type_sunset">
+        <p className="sun-times__label">
+          Sunset:
+        </p>
+        <p className="sun-times__value">
+            {data.sunset}
+        </p>
       </div>
 
       {!isDay && (
