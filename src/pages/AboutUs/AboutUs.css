@@ -165,8 +165,6 @@
   opacity: 1;
 }
 
-
-
 @media (max-width: 768px) {
   .about__section_intro,
   .about__features-grid {
@@ -184,5 +182,11 @@
 
   .about__transition-overlay {
     bottom: -40px;
+  }
+}
+
+@media (max-width: 415px) {
+  .about__transition-overlay {
+    bottom: -60px;
   }
 }

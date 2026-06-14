@@ -47,3 +47,19 @@
     font-size: 18px;
   }
 }
+
+@media (max-width: 415px) {
+  .home__hero {
+    padding-inline: 20px;
+  }
+
+  .home__title {
+    font-size: 52px;
+    font-weight: 700;
+    padding-top: 25px;
+  }
+
+  .home__tagline {
+    font-size: 18px;
+  }
+}

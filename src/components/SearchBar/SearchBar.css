@@ -60,6 +60,7 @@
 
 .search-bar__input {
   flex: 1;
+  min-width: 0;
 
   background: transparent;
   border: none;
@@ -132,5 +133,9 @@
 @media (max-width: 768px) {
   .search-bar.search-bar_variant_explorer {
     width: 100%;
+  }
+
+  .search-bar.search-bar_variant_main {
+    padding: 5px 5px 5px 20px;
   }
 }
