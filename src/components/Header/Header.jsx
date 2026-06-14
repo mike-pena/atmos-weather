@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
+import hamburger from "../../assets/icons/hamburger-menu.svg";
 
 import "./Header.css";
 
@@ -32,7 +33,9 @@ function Header({ variant = "home", isDay, unit, onUnitChange }) {
           className="header__menu-button"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          ☰
+          <svg xmlns="http://www.w3.org/2000/svg" width="38px" height="38px" viewBox="2 5 20 14" fill="none">
+            <path d="M4 17H20M4 12H20M4 7H20" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
         </button>
 
         <nav className="header__navigation">

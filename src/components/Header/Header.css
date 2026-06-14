@@ -146,6 +146,7 @@
 
 .header__menu-button {
   display: none;
+  padding: 0;
 }
 
 .header__mobile-menu {

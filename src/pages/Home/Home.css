@@ -35,3 +35,15 @@
   font-size: 1.2rem;
   opacity: 0.8;
 }
+
+@media (max-width: 768px) {
+  .home__title {
+    font-size: 68px;
+    font-weight: 700;
+    padding-top: 25px;
+  }
+
+  .home__tagline {
+    font-size: 18px;
+  }
+}
