@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+.footer_variant_explorer {
+    background-color: transparent;
+}
+
 .footer p {
     color: rgba(255, 255, 255, 0.692);
     font-size: 13px;

@@ -73,7 +73,7 @@ function App() {
                 unit={temperatureUnit}
                 onUnitChange={toggleTemperatureUnit}
               />
-              <Footer />
+              <Footer variant="explorer"/>
             </>
           }
         />
@@ -87,7 +87,7 @@ function App() {
                 onUnitChange={toggleTemperatureUnit}
               />
               <AboutUs />
-              <Footer />
+              <Footer/>
             </>
           }
         />
