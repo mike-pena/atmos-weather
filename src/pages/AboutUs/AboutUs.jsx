@@ -15,8 +15,8 @@ function AboutUs() {
   }
 
   return (
+    <PageTransition>
     <main className="about">
-      <PageTransition>
         <section className="about__hero">
             <div className="about__hero-content">
               <p className="about__eyebrow">About Atmos</p>
@@ -30,6 +30,9 @@ function AboutUs() {
               </p>
             </div>
         </section>
+
+        <div className="about__transition-overlay"></div>
+
         <div className="about__wrapper">
 
           <section className="about__section about__section_intro">
@@ -109,8 +112,8 @@ function AboutUs() {
             </p>
           </section>
         </div>
-      </PageTransition>
     </main>
+    </PageTransition>
   );
 }
 
