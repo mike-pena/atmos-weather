@@ -87,7 +87,7 @@
 
 @media (max-width: 768px) {
     .daily-forecast__card {
-        padding: 17px 0px;
+        padding: 17px 30px;
     }
 
     .daily-forecast__precipitation {
