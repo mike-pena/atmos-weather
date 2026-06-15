@@ -73,6 +73,7 @@
 .about__wrapper {
   max-width: 1280px;
   padding-inline: clamp(30px, 7vw, 94px);
+  margin: auto;
 }
 
 .about__section {
