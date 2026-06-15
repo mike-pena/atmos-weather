@@ -1,12 +1,18 @@
 .home {
   overflow: hidden;
   display: flex;
+  min-height: 0;
+}
+
+.home > * {
+  flex: 1;
+  display: flex;
+  min-height: 0;
 }
 
 .home__hero {
   margin: auto;
   max-width: 1280px;
-  height: 100%;
   padding-inline: clamp(30px, 7vw, 94px);
   display: flex;
   flex-direction: column;

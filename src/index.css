@@ -42,8 +42,9 @@ main {
 }
 
 .home-page {
-  height: 100vh;
+  min-height: 100svh;
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   background: #6e1b6e;
   background: linear-gradient(
