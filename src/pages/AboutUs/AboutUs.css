@@ -22,30 +22,14 @@
     radial-gradient(at 12% 99%, hsla(280, 71%, 33%, 1) 0px, transparent 50%),
     radial-gradient(at 73% 85%, hsla(274, 60%, 35%, 1) 0px, transparent 50%);
 }
-/*
-.about__hero::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
 
-  height: 400px;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgb(0, 0, 0) 100%
-  );
-  pointer-events: none;
-}
-*/
 .about__transition-overlay {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0px;
 
-  height: 400px; /* ajusta a gusto */
+  height: 400px;
   background: linear-gradient(
     to bottom,
     transparent 0%,

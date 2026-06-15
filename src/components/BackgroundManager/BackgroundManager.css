@@ -28,5 +28,5 @@
 }
 
 .background__fade--visible {
-  opacity: 0.25; /* prueba entre 0.2 y 0.35 */
+  opacity: 0.25;
 }
