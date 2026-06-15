@@ -53,11 +53,12 @@
   text-transform: uppercase;
   letter-spacing: 0.16em;
   opacity: 0.7;
+  z-index: 1000;
 }
 
 .about__title {
   margin: 0;
-  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-size: clamp(3rem, 8vw, 5.8rem);
   line-height: 0.95;
   letter-spacing: -0.06em;
 }
@@ -65,7 +66,7 @@
 .about__description {
   max-width: 620px;
   margin-top: 28px;
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(1rem, 2vw, 1.1rem);
   line-height: 1.7;
   opacity: 0.8;
 }

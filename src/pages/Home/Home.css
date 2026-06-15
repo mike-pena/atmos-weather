@@ -29,20 +29,19 @@
 }
 
 .home__title {
-  font-size: 90px;
+  font-size: clamp(3rem, 8vw, 5.8rem);
   color: white;
   font-weight: 700;
 }
 
 .home__tagline {
   color: white;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   opacity: 0.8;
 }
 
 @media (max-width: 768px) {
   .home__title {
-    font-size: 68px;
     font-weight: 700;
     padding-top: 25px;
   }

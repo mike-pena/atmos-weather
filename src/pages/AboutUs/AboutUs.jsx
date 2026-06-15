@@ -19,7 +19,7 @@ function AboutUs() {
             <div className="about__hero-content">
               <p className="about__eyebrow">About Atmos</p>
 
-              <h1 className="about__title">Simple weather. Better experience.</h1>
+              <h1 className="about__title">Simple weather.<br></br>Better experience.</h1>
 
               <p className="about__description">
                 Atmos is a modern weather app focused on clarity, real-time
