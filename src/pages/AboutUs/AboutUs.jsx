@@ -1,6 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
 import PageTransition from "../../components/PageTransition/PageTransition";
 
 import "./AboutUs.css";
