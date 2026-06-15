@@ -30,10 +30,20 @@
     border-bottom: none;
 }
 
+.daily-forecast__day {
+    width: 35px;
+    text-align: left;
+}
+
 .daily-forecast__temperature-wrapper {
     display: flex;
     justify-content: center;
     gap: 30px;
+}
+
+.daily-forecast__temperature {
+    width: 44px;
+    text-align: left;
 }
 
 .daily-forecast__temperature-symbol_type_min {
@@ -59,8 +69,9 @@
 .daily-forecast__precipitation {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     gap: 6px;
+    width: 60px;
 }
 
 .daily-forecast__precipitation-icon {
@@ -90,14 +101,16 @@
         padding: 17px 30px;
     }
 
+    .daily-forecast__temperature-wrapper {
+        gap: 10px;
+    }
+
     .daily-forecast__precipitation {
-        display: flex;
-        align-items: center;
         justify-content: center;
         flex-direction: column;
         gap: 2px;
         font-size: 14px;
-        margin-right: -15px;
+        width: 35px;
     }
 
     .daily-forecast__rain-icon {

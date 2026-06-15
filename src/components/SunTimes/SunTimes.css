@@ -97,8 +97,7 @@
     font-size: 18px;
   }
 
-  .sun-times__track,
-  .sun-times__moon-icon {
+  .sun-times__track {
     grid-column: 1 / -1;
     grid-row: 2;
     width: 100%;
@@ -108,5 +107,9 @@
   .sun-times__track {
     width: 92%;
     margin: auto;
+  }
+
+  .sun-times__moon-icon {
+    display: none;
   }
 }

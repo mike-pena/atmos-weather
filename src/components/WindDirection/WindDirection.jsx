@@ -1,15 +1,30 @@
 import "./WindDirection.css";
 
-function WindDirection({ direction }) {
+function WindDirection({ direction, isDay }) {
+
+    const themeModifier = isDay
+    ? "wind-compass_theme_day"
+    : "wind-compass_theme_night";
     
     return (
-        <div
-        className="wind-direction__arrow"
-        style={{transform: `rotate(${direction}deg)`}}
-        >
-            <svg viewBox="0 0 24.00 24.00" width="60" height="60" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#7c71d0" strokeWidth="0.12000000000000002">
-                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7.33199 7.68464C6.94146 8.07517 6.3083 8.07517 5.91777 7.68464C5.52725 7.29412 5.52725 6.66095 5.91777 6.27043L10.5834 1.60483C11.3644 0.823781 12.6308 0.82378 13.4118 1.60483L18.0802 6.27327C18.4707 6.66379 18.4707 7.29696 18.0802 7.68748C17.6897 8.078 17.0565 8.078 16.666 7.68748L13 4.02145V21.9999C13 22.5522 12.5523 22.9999 12 22.9999C11.4477 22.9999 11 22.5522 11 21.9999V4.01666L7.33199 7.68464Z" fill="#b8daff"></path> </g>
-            </svg>
+        <div className={`wind-compass ${themeModifier}`}>
+            <span className="wind-compass__label wind-compass__label_n">N</span>
+            <span className="wind-compass__label wind-compass__label_e">E</span>
+            <span className="wind-compass__label wind-compass__label_s">S</span>
+            <span className="wind-compass__label wind-compass__label_w">W</span>
+
+            <div
+                className="wind-compass__arrow"
+                style={{
+                transform: `translate(-50%, -50%) rotate(${direction}deg)`,
+                }}
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" id="Capa_2" data-name="Capa 2" viewBox="0 0 525.87 120.08">
+                    <g id="Capa_1-2" data-name="Capa 1">
+                        <path fill="currentColor" d="M456.56,116.85c-16.01-13.63,8.35-25.54,18.58-43.1l-463.66-.28c-8.91,0-12.35-10-11.3-15.22,1.59-7.91,7.08-12.29,16.42-12.29h459.87s-21.11-22.4-21.11-22.4c-5.42-5.76-4.1-13.45-.45-18.35,3.69-4.97,13.88-7.49,18.97-2.48l47.03,46.19c5.36,5.26,7.09,14.76,1.55,20.32l-46.6,46.79c-5.41,5.43-14.28,5.09-19.3.82Z"/>
+                    </g>
+                </svg>
+            </div>
         </div>
     );
 }

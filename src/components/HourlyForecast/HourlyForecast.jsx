@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import "./HourlyForecast.css";
 
 function HourlyForecast({ forecast, isDay, temperatureUnit }) {
@@ -13,6 +13,12 @@ function HourlyForecast({ forecast, isDay, temperatureUnit }) {
       behavior: "smooth",
     });
   };
+
+  useEffect(() => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollLeft = 0;
+    }
+  }, [forecast]);
 
   const themeModifier = isDay
     ? "hourly-forecast_theme_day"

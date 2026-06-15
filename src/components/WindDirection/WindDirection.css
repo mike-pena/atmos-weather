@@ -1,4 +1,58 @@
-.wind-direction__arrow {
-    width: fit-content;
-    margin: auto;
+.wind-compass {
+  position: relative;
+  width: 95px;
+  height: 95px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+
+.wind-compass_theme_night {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.wind-compass__label {
+  position: absolute;
+  font-weight: 600;
+  font-size: 14px;
+  opacity: 0.8;
+  transform: translate(-50%, -50%);
+}
+
+.wind-compass__label_n {
+  top: 0px;
+  left: 50%;
+}
+
+.wind-compass__label_s {
+  bottom: -17px;
+  left: 50%;
+}
+
+.wind-compass__label_e {
+  top: 50%;
+  right: -9px;
+}
+
+.wind-compass__label_w {
+  top: 50%;
+  left: 0px;
+}
+
+.wind-compass__arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  transition: transform 0.4s ease;
+}
+
+.wind-compass__arrow svg {
+  width: 60px;
+  transform: rotate(-90deg);
+}
+
+@media (max-width: 768px) {
+    .wind-compass {
+        margin-top: 5px;
+    }
 }

@@ -10,10 +10,10 @@ function DailyForecast({ forecast, isDay, temperatureUnit }) {
     <section className={`daily-forecast ${themeModifier}`}>
       {forecast.map((day) => (
         <div key={day.date} className="daily-forecast__card">
-          <p>{day.day}</p>
+          <p className="daily-forecast__day">{day.day}</p>
           <div className="daily-forecast__temperature-wrapper">
-            <p><span className={`daily-forecast__temperature-symbol daily-forecast__temperature-symbol_type_min ${themeModifier}`}>↓</span> {Math.round(day.minTemp)}°</p>
-            <p><span className={`daily-forecast__temperature-symbol daily-forecast__temperature-symbol_type_max ${themeModifier}`}>↑</span> {Math.round(day.maxTemp)}°</p>
+            <p className="daily-forecast__temperature"><span className={`daily-forecast__temperature-symbol daily-forecast__temperature-symbol_type_min ${themeModifier}`}>↓</span> {Math.round(day.minTemp)}°</p>
+            <p className="daily-forecast__temperature"><span className={`daily-forecast__temperature-symbol daily-forecast__temperature-symbol_type_max ${themeModifier}`}>↑</span> {Math.round(day.maxTemp)}°</p>
           </div>
           <div className="daily-forecast__precipitation">
             <div className="daily-forecast__precipitation-icon">

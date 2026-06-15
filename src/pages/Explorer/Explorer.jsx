@@ -93,17 +93,26 @@ function Explorer({ unit, onUnitChange }) {
                   isDay={data.sunTimes.isDay}
                   currentLevel={data?.uvIndex?.level}
                 />
-
                 <div className="explorer__metrics-secondary">
                   <WeatherDetailCard
                     label="Wind Speed"
-                    value={`${data?.wind?.speed} km/h`}
+                    value={
+                      <>
+                        {data?.wind?.speed}
+                        <span className="weather-detail-card__unit"> km/h</span>
+                      </>
+                    }
                     isDay={data.sunTimes.isDay}
-                    extraContent={<WindDirection direction={data?.wind.direction} />}
+                    extraContent={<WindDirection direction={data?.wind.direction} isDay={data.sunTimes.isDay}/>}
                   />
                   <WeatherDetailCard
                     label="Humidity"
-                    value={`${data?.humidity?.value}%`}
+                    value={
+                      <>
+                        {data?.humidity?.value}
+                        <span className="weather-detail-card__unit">%</span>
+                      </>
+                    }
                     description={data?.humidity?.level}
                     isDay={data.sunTimes.isDay}
                     extraContent={data.humidity.message}

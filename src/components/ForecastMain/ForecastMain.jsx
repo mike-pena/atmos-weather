@@ -1,5 +1,4 @@
 import Lottie from "lottie-react/build/index.es.js";
-//import sunAnimation from "../../assets/animations/drizzle-day.json"; FOR TESTING
 
 import "./ForecastMain.css";
 
