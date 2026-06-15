@@ -54,7 +54,7 @@ function App() {
         <Route
           path="/"
           element={
-            <>
+            <div className="home-page">
               <Header
                 variant="about"
                 unit={temperatureUnit}
@@ -62,7 +62,7 @@ function App() {
               />
               <Home />
               <Footer />
-            </>
+            </div>
           }
         />
         <Route
