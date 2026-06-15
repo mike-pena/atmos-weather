@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import { useWeather } from "../../hooks/useWeather";
 import Header from "../../components/Header/Header";
@@ -38,8 +36,7 @@ function Explorer({ unit, onUnitChange }) {
   if (!data && error) {
     return (
       <div className="explorer__error-state-container">
-        <Background video="/error.mp4" />
-
+        <Header variant="about" isDay={data?.sunTimes.isDay} unit={unit} onUnitChange={onUnitChange}/>
         <div className="explorer__error-state">
           
           <p className="explorer__error-state-title">No results for "{searchCity}"</p>
