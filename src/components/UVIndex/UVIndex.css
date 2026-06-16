@@ -76,3 +76,13 @@
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+
+@media (max-width: 768px) {
+  .uv-index__level-labels {
+    margin-top: 12px;
+  }
+
+  .uv-index__level {
+    line-height: 0.7;
+  }
+}
