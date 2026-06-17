@@ -122,3 +122,18 @@
         width: 30px;
     }
 }
+
+@media (max-width: 415px) {
+    .daily-forecast__card {
+        padding-inline: 25px;
+    }
+
+    .daily-forecast__temperature-wrapper {
+        font-size: 14px;
+        gap: 3px;
+    }
+
+    .daily-forecast__condition-icon {
+        width: 25px;
+    }
+}

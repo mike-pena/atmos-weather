@@ -27,7 +27,7 @@ function UVIndex({
       <div className="uv-index__levels">
         <div className="uv-index__level-labels">
           {levels.map((level) => (
-            <div
+            <p
               key={level}
               className={`uv-index__level ${
                 currentLevel === level
@@ -36,7 +36,7 @@ function UVIndex({
               }`}
             >
               {level}
-            </div>
+            </p>
           ))}
         </div>
 

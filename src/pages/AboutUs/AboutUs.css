@@ -175,4 +175,8 @@
   .about__transition-overlay {
     bottom: -60px;
   }
+
+  .about__title {
+    font-size: 40px;
+  }
 }
